@@ -12,60 +12,82 @@
             --deal-color: #e76f51;
             --success-color: #2a9d8f;
             --card-bg: #ffffff;
+            --text-muted: #666;
         }
 
-        body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.6; background-color: #f9f9f9; }
+        body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.6; background-color: #f4f4f4; }
 
+        /* HEADER SECTION WITH PREMIUM KITCHEN IMAGE */
         header {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&w=1200');
-            background-size: cover; background-position: center; color: white; padding: 80px 20px; text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=1200&auto=format&fit=crop');
+            background-size: cover; 
+            background-position: center; 
+            color: white; 
+            padding: 100px 20px; 
+            text-align: center;
         }
 
-        header h1 { font-size: 2.5rem; margin: 0; text-transform: uppercase; letter-spacing: 2px; }
+        header h1 { font-size: 2.8rem; margin: 0; text-transform: uppercase; letter-spacing: 3px; font-weight: 700; }
         header p { font-size: 1.1rem; color: var(--primary-color); margin-top: 10px; }
 
-        section { padding: 50px 20px; max-width: 1100px; margin: auto; text-align: center; }
-        h2 { font-size: 2rem; margin-bottom: 40px; position: relative; padding-bottom: 15px; text-transform: uppercase; }
-        h2::after { content: ''; width: 60px; height: 3px; background: var(--primary-color); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
+        section { padding: 60px 20px; max-width: 1100px; margin: auto; text-align: center; }
+        
+        h2 { font-size: 2.2rem; margin-bottom: 50px; position: relative; padding-bottom: 15px; text-transform: uppercase; color: var(--dark-color); }
+        h2::after { content: ''; width: 80px; height: 4px; background: var(--primary-color); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); border-radius: 2px; }
 
         .grid-container {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 30px; 
+            padding: 10px;
         }
 
         .wa-link { text-decoration: none; color: inherit; display: block; }
         
+        /* CARD STYLES */
         .card, .deal-card {
-            background: var(--card-bg); border-radius: 12px; overflow: visible; 
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.3s; 
-            position: relative; border: 1px solid #eee;
+            background: var(--card-bg); 
+            border-radius: 15px; 
+            overflow: hidden; 
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05); 
+            transition: all 0.4s ease; 
+            position: relative; 
+            border: 1px solid #ddd;
         }
 
-        .deal-card { border: 2px dashed var(--deal-color); padding: 40px 20px 20px; margin-top: 20px; }
-        .card:hover, .deal-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .deal-card { padding: 50px 25px 30px; border: 2px dashed var(--deal-color); }
 
-        .service-img { width: 100%; height: 200px; object-fit: cover; border-radius: 12px 12px 0 0; display: block; }
+        .card:hover, .deal-card:hover { 
+            transform: translateY(-10px); 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15); 
+        }
+
+        .service-img { width: 100%; height: 250px; object-fit: cover; display: block; }
 
         .promo-tag {
-            background: var(--deal-color); color: white; padding: 5px 15px; border-radius: 50px;
+            background: var(--deal-color); color: white; padding: 6px 20px; border-radius: 50px;
             position: absolute; top: -15px; left: 50%; transform: translateX(-50%); 
-            font-weight: bold; font-size: 0.8rem; z-index: 5; box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+            font-weight: 700; font-size: 0.85rem; z-index: 5; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            text-transform: uppercase;
         }
 
-        .price-tag { font-size: 1.5rem; color: var(--dark-color); font-weight: 700; margin: 10px 0; }
-        .click-hint { font-size: 0.7rem; color: var(--primary-color); font-weight: 700; text-transform: uppercase; }
+        .price-tag { font-size: 1.8rem; color: var(--dark-color); font-weight: 800; margin: 15px 0; }
+        .price-tag span { font-size: 0.9rem; color: var(--text-muted); font-weight: 400; }
 
-        .status-badge { padding: 4px 10px; font-weight: bold; font-size: 0.7rem; border-radius: 4px; display: inline-block; margin-bottom: 10px; }
-        .progress-bar-bg { background: #eee; height: 8px; border-radius: 10px; margin: 12px 0; overflow: hidden; }
-        .progress-fill { height: 100%; transition: width 1s; }
+        .click-hint { 
+            margin-top: 15px; color: var(--primary-color); 
+            font-size: 0.85rem; font-weight: 700; text-transform: uppercase;
+        }
 
-        .features-strip { display: flex; flex-wrap: wrap; justify-content: center; background: var(--dark-color); color: white; padding: 20px; list-style: none; margin: 0; }
-        .features-strip li { margin: 10px 20px; font-size: 0.9rem; }
-        .features-strip li span { color: var(--primary-color); }
+        .features-strip { 
+            display: flex; flex-wrap: wrap; justify-content: center; 
+            background: var(--dark-color); color: white; padding: 25px; 
+            list-style: none; margin: 0; border-bottom: 4px solid var(--primary-color);
+        }
+        .features-strip li { margin: 10px 25px; font-size: 1rem; }
+        .features-strip li span { color: var(--primary-color); margin-right: 8px; font-weight: bold; }
 
-        .cta { background: var(--dark-color); color: white; padding: 60px 20px; }
-        .cta-btn { padding: 15px 40px; border: none; background: var(--primary-color); color: white; font-size: 1.1rem; font-weight: bold; border-radius: 50px; cursor: pointer; }
-
-        footer { background: #111; color: #777; text-align: center; padding: 30px; font-size: 0.8rem; }
+        footer { background: #111; color: #888; text-align: center; padding: 40px; font-size: 0.9rem; }
     </style>
 </head>
 <body>
@@ -78,7 +100,7 @@
 <ul class="features-strip">
     <li><span>✔</span> Interior Wood</li>
     <li><span>✔</span> Premium Polish</li>
-    <li><span>✔</span> Premium Rates</li>
+    <li><span>✔</span> Competitive Rates</li>
     <li><span>✔</span> On-Time Delivery</li>
 </ul>
 
@@ -89,101 +111,55 @@
             <div class="deal-card">
                 <div class="promo-tag">LIMITED OFFER</div>
                 <h3>Full Kitchen Package</h3>
-                <p style="font-size:0.9rem;">UV Gloss/Matte sheets + Branded hardware + Profile Lights.</p>
-                <div class="price-tag">Rs. 5000 / sq.ft</div>
-                <p class="click-hint">Tap to get Offer</p>
+                <p style="color: var(--text-muted); font-size:0.95rem;">UV Gloss/Matte sheets + Branded hardware + Profile Lights.</p>
+                <div class="price-tag">Rs. 5,000 <span>/ sq.ft</span></div>
+                <div class="click-hint">Tap to get Offer</div>
             </div>
         </a>
 
         <a href="https://wa.me/923187196942?text=I'm interested in the House Makeover Deal" class="wa-link">
             <div class="deal-card">
-                <div class="promo-tag" style="background:#2a9d8f;">HOT DEAL</div>
+                <div class="promo-tag" style="background:var(--success-color);">HOT DEAL</div>
                 <h3>Full House Makeover</h3>
-                <p style="font-size:0.9rem;">Wardrobes + Kitchens + Media Walls for your entire home.</p>
-                <div class="price-tag">Flat 15% OFF</div>
-                <p class="click-hint">Tap to claim offer</p>
+                <p style="color: var(--text-muted); font-size:0.95rem;">Wardrobes + Kitchens + Media Walls for your entire home.</p>
+                <div class="price-tag">Contact <span>for Quote</span></div>
+                <div class="click-hint">Get a Free Estimate</div>
             </div>
         </a>
-    </div>
-</section>
-
-<section id="project-status" style="background: #fdfaf7; border-radius: 20px;">
-    <h2>Live Project Status</h2>
-    <div class="grid-container">
-        <div class="card" style="border-left: 4px solid var(--success-color); padding: 20px; text-align: left;">
-            <div class="status-badge" style="background: #e8f5f3; color: var(--success-color);">● WORKING</div>
-            <h3>Gojra - Shop Counter</h3>
-            <p style="font-size: 0.85rem;">Status: <strong>20% Done</strong> (Cutting Phase)</p>
-            <div class="progress-bar-bg"><div class="progress-fill" style="background: var(--success-color); width: 20%;"></div></div>
-            <p class="click-hint" style="color: var(--success-color);">Delivery in 5 days</p>
-        </div>
-
-        <div class="card" style="border-left: 4px solid var(--primary-color); padding: 20px; text-align: left;">
-            <div class="status-badge" style="background: #fff3e0; color: var(--primary-color);">📅 OPEN</div>
-            <h3>NEW BOOKING AVAILABLE</h3>
-            <p style="font-size: 0.85rem;">Status: <strong>Design Phase</strong></p>
-            <div class="progress-bar-bg"><div class="progress-fill" style="background: var(--primary-color); width: 5%;"></div></div>
-            <p class="click-hint">Book site visit now</p>
-        </div>
-
-        <div class="card" style="background: var(--dark-color); color: white; padding: 20px; text-align: left;">
-            <h3 style="color: var(--primary-color); margin-top: 5px;">Quality Standards</h3>
-            <ul style="font-size: 0.8rem; padding-left: 15px; line-height: 1.6;">
-                <li>Soft-Close Hardware</li>
-                <li>Pest Resistant Material</li>
-                <li>Laminated Core Boards</li>
-                <li>Hidden Profile Lighting</li>
-            </ul>
-        </div>
     </div>
 </section>
 
 <section id="services">
     <h2>Our Expertise</h2>
+    <p style="margin-top: -30px; margin-bottom: 40px; color: #666;">Choose a service to discuss on WhatsApp</p>
+    
     <div class="grid-container">
-        <a href="https://wa.me/923187196942?text=I need a quote for Kitchen" class="wa-link">
+        <a href="https://wa.me/923187196942?text=I'm interested in Italian Kitchens" class="wa-link">
             <div class="card">
-                <img src="https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=600" class="service-img" alt="Kitchen">
-                <div style="padding: 15px;">
+                <img src="https://images.unsplash.com/photo-1556912177-f547c627395a?q=80&w=600&auto=format&fit=crop" alt="Modern Italian Kitchen" class="service-img">
+                <div style="padding: 20px;">
                     <h3>Italian Kitchens</h3>
-                    <p style="font-size:0.9rem;">Modern & Sleek storage solutions.</p>
-                    <p class="click-hint">Get Quote</p>
+                    <p style="font-size: 0.9rem; color: #666;">Sleek, modern & high-end finish with smart storage solutions.</p>
+                    <p class="click-hint">Get Consultation</p>
                 </div>
             </div>
         </a>
 
-        <a href="https://wa.me/923187196942?text=I need a quote for Wardrobe" class="wa-link">
+        <a href="https://wa.me/923187196942?text=I'm interested in Custom Wardrobes" class="wa-link">
             <div class="card">
-                <img src="https://images.pexels.com/photos/6707628/pexels-photo-6707628.jpeg?auto=compress&cs=tinysrgb&w=600" class="service-img" alt="Wardrobe">
-                <div style="padding: 15px;">
-                    <h3>Modern Wardrobes</h3>
-                    <p style="font-size:0.9rem;">Custom built-in & sliding designs.</p>
-                    <p class="click-hint">Get Quote</p>
-                </div>
-            </div>
-        </a>
-
-        <a href="https://wa.me/923187196942?text=I need a quote for Media Wall" class="wa-link">
-            <div class="card">
-                <img src="https://images.pexels.com/photos/276514/pexels-photo-276514.jpeg?auto=compress&cs=tinysrgb&w=600" class="service-img" alt="Media Wall">
-                <div style="padding: 15px;">
-                    <h3>Media Walls</h3>
-                    <p style="font-size:0.9rem;">LED Units & Interior Solutions.</p>
-                    <p class="click-hint">Get Quote</p>
+                <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?q=80&w=600&auto=format&fit=crop" alt="Premium Wardrobes" class="service-img">
+                <div style="padding: 20px;">
+                    <h3>Premium Wardrobes</h3>
+                    <p style="font-size: 0.9rem; color: #666;">Custom designs that maximize space with a touch of elegance.</p>
+                    <p class="click-hint">Get Consultation</p>
                 </div>
             </div>
         </a>
     </div>
 </section>
 
-<section class="cta">
-    <h2>Start Your Project</h2>
-    <p style="font-size: 1.8rem; font-weight: 700; color: var(--primary-color);">0318 7196942</p>
-    <button class="cta-btn" onclick="window.location.href='https://wa.me/923187196942'">WhatsApp Now</button>
-</section>
-
 <footer>
-    <p>© 2026 Woodcraft Creations | Mirza Zawar Woodworks</p>
+    &copy; 2026 Woodcraft Creations. Quality craftsmanship you can trust.
 </footer>
 
 </body>
