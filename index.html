@@ -40,28 +40,40 @@
             cursor: pointer; position: relative; border: 1px solid #eee;
         }
 
-        .deal-card { border: 2px dashed var(--deal-color); padding: 35px 20px; }
+        /* Fixed Deal Card Styling */
+        .deal-card { 
+            border: 2px dashed var(--deal-color); 
+            padding: 45px 20px 35px 20px; /* Top padding increased for tag */
+            height: 100%;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
         .card:hover, .deal-card:hover { 
             transform: translateY(-10px); 
             box-shadow: 0 15px 35px rgba(0,0,0,0.12);
             border-color: var(--primary-color);
         }
 
-        .img-placeholder { 
-            width: 100%; height: 200px; background: #222; 
-            display: flex; align-items: center; justify-content: center; 
-            color: #fff; font-weight: 600; text-transform: uppercase;
+        .img-container { 
+            width: 100%; height: 200px; overflow: hidden;
+        }
+        
+        .img-container img {
+            width: 100%; height: 100%; object-fit: cover;
         }
 
         .promo-tag {
             background: var(--deal-color); color: white; padding: 5px 15px; border-radius: 50px;
-            position: absolute; top: -15px; left: 50%; transform: translateX(-50%); font-weight: bold; font-size: 0.8rem;
+            position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-weight: bold; font-size: 0.8rem;
+            z-index: 10;
         }
 
         .price-tag { font-size: 1.6rem; color: var(--dark-color); font-weight: 700; margin: 15px 0; }
         .click-hint { font-size: 0.75rem; color: var(--primary-color); font-weight: 700; text-transform: uppercase; margin-top: 10px; }
 
-        /* Project Status Styles */
         .status-badge { padding: 5px 12px; font-weight: bold; font-size: 0.75rem; border-radius: 5px; display: inline-block; margin-bottom: 10px; }
         .progress-bar-bg { background: #eee; height: 10px; border-radius: 10px; margin: 15px 0; overflow: hidden; }
         .progress-fill { height: 100%; transition: width 1s ease-in-out; }
@@ -163,7 +175,9 @@
         
         <a href="https://wa.me/923187196942?text=Hi, I need a quote for an Italian Kitchen." class="wa-link">
             <div class="card">
-                <div class="img-placeholder">Kitchens</div>
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80" alt="Kitchen">
+                </div>
                 <div style="padding: 15px;">
                     <h3>Italian Kitchens</h3>
                     <p>Sleek, modern & high-end finish with smart storage.</p>
@@ -174,7 +188,9 @@
 
         <a href="https://wa.me/923187196942?text=Hi, I want to discuss a Modern Wardrobe design." class="wa-link">
             <div class="card">
-                <div class="img-placeholder">Wardrobes</div>
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=600&q=80" alt="Wardrobe">
+                </div>
                 <div style="padding: 15px;">
                     <h3>Modern Wardrobes</h3>
                     <p>Custom built-in & sliding designs for every room.</p>
@@ -185,7 +201,9 @@
 
         <a href="https://wa.me/923187196942?text=Hi, I have a Custom Woodwork Project to discuss." class="wa-link">
             <div class="card">
-                <div class="img-placeholder">Custom Projects</div>
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=600&q=80" alt="Custom Projects">
+                </div>
                 <div style="padding: 15px;">
                     <h3>Custom Projects</h3>
                     <p>Media Walls, Office Work, and Bespoke Furniture.</p>
@@ -209,4 +227,5 @@
 </footer>
 
 </body>
-</html>
+    </html>
+    
