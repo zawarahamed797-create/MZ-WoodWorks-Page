@@ -15,79 +15,61 @@
             --text-muted: #666;
         }
 
-        body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.6; background-color: #f4f4f4; }
+        body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.6; background-color: #f9f9f9; }
 
-        /* HEADER SECTION WITH PREMIUM KITCHEN IMAGE */
+        /* HEADER PICTORIAL FIX */
         header {
-            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=1200&auto=format&fit=crop');
-            background-size: cover; 
-            background-position: center; 
-            color: white; 
-            padding: 100px 20px; 
-            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover; background-position: center; color: white; padding: 80px 20px; text-align: center;
         }
 
-        header h1 { font-size: 2.8rem; margin: 0; text-transform: uppercase; letter-spacing: 3px; font-weight: 700; }
+        header h1 { font-size: 2.5rem; margin: 0; text-transform: uppercase; letter-spacing: 2px; }
         header p { font-size: 1.1rem; color: var(--primary-color); margin-top: 10px; }
 
         section { padding: 60px 20px; max-width: 1100px; margin: auto; text-align: center; }
-        
-        h2 { font-size: 2.2rem; margin-bottom: 50px; position: relative; padding-bottom: 15px; text-transform: uppercase; color: var(--dark-color); }
-        h2::after { content: ''; width: 80px; height: 4px; background: var(--primary-color); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); border-radius: 2px; }
+        h2 { font-size: 2rem; margin-bottom: 50px; position: relative; padding-bottom: 15px; text-transform: uppercase; }
+        h2::after { content: ''; width: 60px; height: 3px; background: var(--primary-color); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
 
         .grid-container {
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-            gap: 30px; 
-            padding: 10px;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 50px 25px;
+            padding-top: 30px;
         }
 
         .wa-link { text-decoration: none; color: inherit; display: block; }
         
-        /* CARD STYLES */
+        /* CARD & TAG FIX */
         .card, .deal-card {
-            background: var(--card-bg); 
-            border-radius: 15px; 
-            overflow: hidden; 
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05); 
-            transition: all 0.4s ease; 
-            position: relative; 
-            border: 1px solid #ddd;
+            background: var(--card-bg); border-radius: 12px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08); transition: 0.3s; 
+            position: relative; border: 1px solid #eee;
+            overflow: visible; /* Important for the red tag */
         }
 
-        .deal-card { padding: 50px 25px 30px; border: 2px dashed var(--deal-color); }
+        .deal-card { border: 2px dashed var(--deal-color); padding: 50px 20px 25px; }
 
-        .card:hover, .deal-card:hover { 
-            transform: translateY(-10px); 
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15); 
+        /* SERVICE IMAGE FIX */
+        .service-img { 
+            width: 100%; height: 220px; object-fit: cover; 
+            border-radius: 12px 12px 0 0; display: block; 
+            background-color: #ddd; /* Loading placeholder */
         }
-
-        .service-img { width: 100%; height: 250px; object-fit: cover; display: block; }
 
         .promo-tag {
-            background: var(--deal-color); color: white; padding: 6px 20px; border-radius: 50px;
-            position: absolute; top: -15px; left: 50%; transform: translateX(-50%); 
-            font-weight: 700; font-size: 0.85rem; z-index: 5; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            text-transform: uppercase;
+            background: var(--deal-color); color: white; padding: 8px 20px; border-radius: 50px;
+            position: absolute; top: -20px; left: 50%; transform: translateX(-50%); 
+            font-weight: bold; font-size: 0.8rem; z-index: 100; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            white-space: nowrap;
         }
 
-        .price-tag { font-size: 1.8rem; color: var(--dark-color); font-weight: 800; margin: 15px 0; }
-        .price-tag span { font-size: 0.9rem; color: var(--text-muted); font-weight: 400; }
+        .price-tag { font-size: 1.6rem; color: var(--dark-color); font-weight: 700; margin: 10px 0; }
+        .click-hint { font-size: 0.75rem; color: var(--primary-color); font-weight: 700; text-transform: uppercase; margin-top: 10px; }
 
-        .click-hint { 
-            margin-top: 15px; color: var(--primary-color); 
-            font-size: 0.85rem; font-weight: 700; text-transform: uppercase;
-        }
+        .features-strip { display: flex; flex-wrap: wrap; justify-content: center; background: var(--dark-color); color: white; padding: 20px; list-style: none; margin: 0; }
+        .features-strip li { margin: 5px 15px; font-size: 0.85rem; }
+        .features-strip li span { color: var(--primary-color); margin-right: 5px; }
 
-        .features-strip { 
-            display: flex; flex-wrap: wrap; justify-content: center; 
-            background: var(--dark-color); color: white; padding: 25px; 
-            list-style: none; margin: 0; border-bottom: 4px solid var(--primary-color);
-        }
-        .features-strip li { margin: 10px 25px; font-size: 1rem; }
-        .features-strip li span { color: var(--primary-color); margin-right: 8px; font-weight: bold; }
-
-        footer { background: #111; color: #888; text-align: center; padding: 40px; font-size: 0.9rem; }
+        footer { background: #111; color: #777; text-align: center; padding: 30px; font-size: 0.8rem; }
     </style>
 </head>
 <body>
@@ -111,19 +93,19 @@
             <div class="deal-card">
                 <div class="promo-tag">LIMITED OFFER</div>
                 <h3>Full Kitchen Package</h3>
-                <p style="color: var(--text-muted); font-size:0.95rem;">UV Gloss/Matte sheets + Branded hardware + Profile Lights.</p>
-                <div class="price-tag">Rs. 5,000 <span>/ sq.ft</span></div>
-                <div class="click-hint">Tap to get Offer</div>
+                <p style="font-size:0.85rem; color: #777;">UV Gloss/Matte sheets + Branded hardware + Profile Lights.</p>
+                <div class="price-tag">Rs. 5,000 <span style="font-size: 0.8rem; font-weight: 400;">/ sq.ft</span></div>
+                <p class="click-hint">Tap to get Offer</p>
             </div>
         </a>
 
         <a href="https://wa.me/923187196942?text=I'm interested in the House Makeover Deal" class="wa-link">
             <div class="deal-card">
-                <div class="promo-tag" style="background:var(--success-color);">HOT DEAL</div>
+                <div class="promo-tag" style="background: var(--success-color);">HOT DEAL</div>
                 <h3>Full House Makeover</h3>
-                <p style="color: var(--text-muted); font-size:0.95rem;">Wardrobes + Kitchens + Media Walls for your entire home.</p>
-                <div class="price-tag">Contact <span>for Quote</span></div>
-                <div class="click-hint">Get a Free Estimate</div>
+                <p style="font-size:0.85rem; color: #777;">Wardrobes + Kitchens + Media Walls for your entire home.</p>
+                <div class="price-tag">Contact <span style="font-size: 0.8rem; font-weight: 400;">for Quote</span></div>
+                <p class="click-hint">Get a Free Estimate</p>
             </div>
         </a>
     </div>
@@ -131,26 +113,24 @@
 
 <section id="services">
     <h2>Our Expertise</h2>
-    <p style="margin-top: -30px; margin-bottom: 40px; color: #666;">Choose a service to discuss on WhatsApp</p>
-    
     <div class="grid-container">
         <a href="https://wa.me/923187196942?text=I'm interested in Italian Kitchens" class="wa-link">
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1556912177-f547c627395a?q=80&w=600&auto=format&fit=crop" alt="Modern Italian Kitchen" class="service-img">
+                <img src="https://images.unsplash.com/photo-1556912177-f547c627395a?auto=format&fit=crop&w=600&q=80" alt="Italian Kitchen" class="service-img">
                 <div style="padding: 20px;">
                     <h3>Italian Kitchens</h3>
-                    <p style="font-size: 0.9rem; color: #666;">Sleek, modern & high-end finish with smart storage solutions.</p>
+                    <p style="font-size: 0.85rem; color: #777;">Sleek, modern & high-end finish with smart storage.</p>
                     <p class="click-hint">Get Consultation</p>
                 </div>
             </div>
         </a>
 
-        <a href="https://wa.me/923187196942?text=I'm interested in Custom Wardrobes" class="wa-link">
+        <a href="https://wa.me/923187196942?text=I'm interested in Premium Wardrobes" class="wa-link">
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?q=80&w=600&auto=format&fit=crop" alt="Premium Wardrobes" class="service-img">
+                <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=600&q=80" alt="Wardrobes" class="service-img">
                 <div style="padding: 20px;">
                     <h3>Premium Wardrobes</h3>
-                    <p style="font-size: 0.9rem; color: #666;">Custom designs that maximize space with a touch of elegance.</p>
+                    <p style="font-size: 0.85rem; color: #777;">Custom designs that maximize space with elegance.</p>
                     <p class="click-hint">Get Consultation</p>
                 </div>
             </div>
