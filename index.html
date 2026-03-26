@@ -12,62 +12,58 @@
             --deal-color: #e76f51;
             --success-color: #2a9d8f;
             --card-bg: #ffffff;
-            --text-muted: #666;
         }
 
         body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.6; background-color: #f9f9f9; }
 
-        /* HEADER PICTORIAL FIX */
         header {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=80');
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&w=1200');
             background-size: cover; background-position: center; color: white; padding: 80px 20px; text-align: center;
         }
 
         header h1 { font-size: 2.5rem; margin: 0; text-transform: uppercase; letter-spacing: 2px; }
         header p { font-size: 1.1rem; color: var(--primary-color); margin-top: 10px; }
 
-        section { padding: 60px 20px; max-width: 1100px; margin: auto; text-align: center; }
-        h2 { font-size: 2rem; margin-bottom: 50px; position: relative; padding-bottom: 15px; text-transform: uppercase; }
+        section { padding: 50px 20px; max-width: 1100px; margin: auto; text-align: center; }
+        h2 { font-size: 2rem; margin-bottom: 40px; position: relative; padding-bottom: 15px; text-transform: uppercase; }
         h2::after { content: ''; width: 60px; height: 3px; background: var(--primary-color); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
 
         .grid-container {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 50px 25px;
-            padding-top: 30px;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;
         }
 
         .wa-link { text-decoration: none; color: inherit; display: block; }
         
-        /* CARD & TAG FIX */
         .card, .deal-card {
-            background: var(--card-bg); border-radius: 12px; 
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08); transition: 0.3s; 
+            background: var(--card-bg); border-radius: 12px; overflow: visible; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.3s; 
             position: relative; border: 1px solid #eee;
-            overflow: visible; /* Important for the red tag */
         }
 
-        .deal-card { border: 2px dashed var(--deal-color); padding: 50px 20px 25px; }
+        .deal-card { border: 2px dashed var(--deal-color); padding: 40px 20px 20px; margin-top: 20px; }
+        .card:hover, .deal-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
 
-        /* SERVICE IMAGE FIX */
-        .service-img { 
-            width: 100%; height: 220px; object-fit: cover; 
-            border-radius: 12px 12px 0 0; display: block; 
-            background-color: #ddd; /* Loading placeholder */
-        }
+        .service-img { width: 100%; height: 200px; object-fit: cover; border-radius: 12px 12px 0 0; display: block; }
 
         .promo-tag {
-            background: var(--deal-color); color: white; padding: 8px 20px; border-radius: 50px;
-            position: absolute; top: -20px; left: 50%; transform: translateX(-50%); 
-            font-weight: bold; font-size: 0.8rem; z-index: 100; 
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            white-space: nowrap;
+            background: var(--deal-color); color: white; padding: 5px 15px; border-radius: 50px;
+            position: absolute; top: -15px; left: 50%; transform: translateX(-50%); 
+            font-weight: bold; font-size: 0.8rem; z-index: 5; box-shadow: 0 3px 6px rgba(0,0,0,0.15);
         }
 
-        .price-tag { font-size: 1.6rem; color: var(--dark-color); font-weight: 700; margin: 10px 0; }
-        .click-hint { font-size: 0.75rem; color: var(--primary-color); font-weight: 700; text-transform: uppercase; margin-top: 10px; }
+        .price-tag { font-size: 1.5rem; color: var(--dark-color); font-weight: 700; margin: 10px 0; }
+        .click-hint { font-size: 0.7rem; color: var(--primary-color); font-weight: 700; text-transform: uppercase; }
+
+        .status-badge { padding: 4px 10px; font-weight: bold; font-size: 0.7rem; border-radius: 4px; display: inline-block; margin-bottom: 10px; }
+        .progress-bar-bg { background: #eee; height: 8px; border-radius: 10px; margin: 12px 0; overflow: hidden; }
+        .progress-fill { height: 100%; transition: width 1s; }
 
         .features-strip { display: flex; flex-wrap: wrap; justify-content: center; background: var(--dark-color); color: white; padding: 20px; list-style: none; margin: 0; }
-        .features-strip li { margin: 5px 15px; font-size: 0.85rem; }
-        .features-strip li span { color: var(--primary-color); margin-right: 5px; }
+        .features-strip li { margin: 10px 20px; font-size: 0.9rem; }
+        .features-strip li span { color: var(--primary-color); }
+
+        .cta { background: var(--dark-color); color: white; padding: 60px 20px; }
+        .cta-btn { padding: 15px 40px; border: none; background: var(--primary-color); color: white; font-size: 1.1rem; font-weight: bold; border-radius: 50px; cursor: pointer; }
 
         footer { background: #111; color: #777; text-align: center; padding: 30px; font-size: 0.8rem; }
     </style>
@@ -82,7 +78,7 @@
 <ul class="features-strip">
     <li><span>✔</span> Interior Wood</li>
     <li><span>✔</span> Premium Polish</li>
-    <li><span>✔</span> Competitive Rates</li>
+    <li><span>✔</span> Premium Rates</li>
     <li><span>✔</span> On-Time Delivery</li>
 </ul>
 
@@ -93,54 +89,16 @@
             <div class="deal-card">
                 <div class="promo-tag">LIMITED OFFER</div>
                 <h3>Full Kitchen Package</h3>
-                <p style="font-size:0.85rem; color: #777;">UV Gloss/Matte sheets + Branded hardware + Profile Lights.</p>
-                <div class="price-tag">Rs. 5,000 <span style="font-size: 0.8rem; font-weight: 400;">/ sq.ft</span></div>
+                <p style="font-size:0.9rem;">UV Gloss/Matte sheets + Branded hardware + Profile Lights.</p>
+                <div class="price-tag">Rs. 5000 / sq.ft</div>
                 <p class="click-hint">Tap to get Offer</p>
             </div>
         </a>
 
         <a href="https://wa.me/923187196942?text=I'm interested in the House Makeover Deal" class="wa-link">
             <div class="deal-card">
-                <div class="promo-tag" style="background: var(--success-color);">HOT DEAL</div>
+                <div class="promo-tag" style="background:#2a9d8f;">HOT DEAL</div>
                 <h3>Full House Makeover</h3>
-                <p style="font-size:0.85rem; color: #777;">Wardrobes + Kitchens + Media Walls for your entire home.</p>
-                <div class="price-tag">Contact <span style="font-size: 0.8rem; font-weight: 400;">for Quote</span></div>
-                <p class="click-hint">Get a Free Estimate</p>
-            </div>
-        </a>
-    </div>
-</section>
+                <p style="font-size:0.9rem;">Wardrobes + Kitchens + Media Walls for your entire home.</p>
 
-<section id="services">
-    <h2>Our Expertise</h2>
-    <div class="grid-container">
-        <a href="https://wa.me/923187196942?text=I'm interested in Italian Kitchens" class="wa-link">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1556912177-f547c627395a?auto=format&fit=crop&w=600&q=80" alt="Italian Kitchen" class="service-img">
-                <div style="padding: 20px;">
-                    <h3>Italian Kitchens</h3>
-                    <p style="font-size: 0.85rem; color: #777;">Sleek, modern & high-end finish with smart storage.</p>
-                    <p class="click-hint">Get Consultation</p>
-                </div>
-            </div>
-        </a>
-
-        <a href="https://wa.me/923187196942?text=I'm interested in Premium Wardrobes" class="wa-link">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=600&q=80" alt="Wardrobes" class="service-img">
-                <div style="padding: 20px;">
-                    <h3>Premium Wardrobes</h3>
-                    <p style="font-size: 0.85rem; color: #777;">Custom designs that maximize space with elegance.</p>
-                    <p class="click-hint">Get Consultation</p>
-                </div>
-            </div>
-        </a>
-    </div>
-</section>
-
-<footer>
-    &copy; 2026 Woodcraft Creations. Quality craftsmanship you can trust.
-</footer>
-
-</body>
-</html>
+Ya code ha is ma kar do change
