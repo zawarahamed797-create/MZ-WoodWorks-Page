@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+
+
+
+<html lang="en">
+
+
+
+<head>
+
+
+
+    <meta charset="UTF-8">
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <title>Woodcraft Creations | Premium Custom Projects</title>
+
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+
+
+    <style>
+
+
+
+        :root {
+
+
+
+            --primary-color: #f4a261; 
+
+
+
+            --dark-color: #1a1a1a;
+
+
+
+            --deal-color: #e76f51;
+
+
+
+            --success-color: #2a9d8f;
+
+
+
+            --card-bg: #ffffff;
+
+
+
+        }
+
+
+
+
+
+
+
+        body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.6; background-color: #fcfcfc; }
+
+
+
+
+
+
+
+        header {
+
+
+
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=1350&q=80');
+
+
+
+            background-size: cover; background-position: center; color: white; padding: 100px 20px; text-align: center;
+
+
+
+        }
+
+
+
+
+
+
+
+        header h1 { font-size: 2.8rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; }
+
+
+
+        header p { font-size: 1.2rem; color: var(--primary-color); }
+
+
+
+
+
+
+
+        section { padding: 60px 20px; max-width: 1200px; margin: auto; text-align: center; }
+
+
+
+        h2 { font-size: 2.2rem; margin-bottom: 40px; position: relative; padding-bottom: 15px; text-transform: uppercase; }
+
+
+
+        h2::after { content: ''; width: 80px; height: 4px; background: var(--primary-color); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
+
+
+
+
+
+
+
+        .grid-container {
+
+
+
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;
+
+
+
+        }
+
+
+
+
+
+
+
+        .wa-link { text-decoration: none; color: inherit; display: block; height: 100%; }
+
+
+
+        
+
+
+
+        .card, .deal-card {
+
+
+
+            background: var(--card-bg); border-radius: 15px; overflow: hidden; 
+
+
+
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.4s ease; 
+
+
+
+            cursor: pointer; position: relative; border: 1px solid #eee;
+
+
+
+        }
+
+
+
+
+
+
+
+        .deal-card { border: 2px dashed var(--deal-color); padding: 35px 20px; }
+
+
+
+        .card:hover, .deal-card:hover { 
+
+
+
+            transform: translateY(-10px); 
+
+
+
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+
+
+
+            border-color: var(--primary-color);
+
+
+
+        }
+
+
+
+
+
+
+
+        .img-placeholder { 
+
+
+
+            width: 100%; height: 200px; background: #222; 
+
+
+
+            display: flex; align-items: center; justify-content: center; 
+
+
+
+            color: #fff; font-weight: 600; text-transform: uppercase;
+
+
+
+        }
+
+
+
+
+
+
+
+        .promo-tag {
+
+
+
+            background: var(--deal-color); color: white; padding: 5px 15px; border-radius: 50px;
+
+
+
+            position: absolute; top: -15px; left: 50%; transform: translateX(-50%); font-weight: bold; font-size: 0.8rem;
+
+
+
+        }
+
+
+
+
+
+
+
+        .price-tag { font-size: 1.6rem; color: var(--dark-color); font-weight: 700; margin: 15px 0; }
+
+
+
+        .click-hint { font-size: 0.75rem; color: var(--primary-color); font-weight: 700; text-transform: uppercase; margin-top: 10px; }
+
+
+
+
+
+
+
+        /* Project Status Styles */
+
+
+
+        .status-badge { padding: 5px 12px; font-weight: bold; font-size: 0.75rem; border-radius: 5px; display: inline-block; margin-bottom: 10px; }
+
+
+
+        .progress-bar-bg { background: #eee; height: 10px; border-radius: 10px; margin: 15px 0; overflow: hidden; }
+
+
+
+        .progress-fill { height: 100%; transition: width 1s ease-in-out; }
+
+
+
+
+
+
+
+        .features-strip { display: flex; flex-wrap: wrap; justify-content: center; background: var(--dark-color); color: white; padding: 30px; list-style: none; margin: 0; }
+
+
+
+        .features-strip li { margin: 15px 25px; font-weight: 500; }
+
+
+
+        .features-strip li span { color: var(--primary-color); margin-right: 8px; }
+
+
+
+
+
+
+
+        .cta { background: var(--dark-color); color: white; padding: 80px 20px; }
+
+
+
+        .cta-btn { padding: 18px 50px; border: none; background: var(--primary-color); color: white; font-size: 1.2rem; font-weight: bold; border-radius: 50px; cursor: pointer; transition: 0.3s; }
+
+
+
+        .cta-btn:hover { background: #e76f51; transform: scale(1.05); }
+
+
+
+
+
+
+
+        footer { background: #111; color: #666; text-align: center; padding: 40px; font-size: 0.9rem; }
+
+
+
+    </style>
+
+
+
+</head>
+
+
+
+<body>
+
+
+
+
+
+
+
+<header>
+
+
+
+    <h1>Woodcraft Creations</h1>
+
+
+
+    <p>Luxury Italian Woodwork | Precision & Style</p>
+
+
+
+</header>
+
+
+
+
+
+
+
+<ul class="features-strip">
+
+
+
+    <li><span>✔</span> Interior Wood</li>
+
+
+
+    <li><span>✔</span> Premium Polish</li>
+
+
+
+    <li><span>✔</span> Premium Rates</li>
+
+
+
+    <li><span>✔</span> On-Time Delivery</li>
+
+
+
+</ul>
+
+
+
+
+
+
+
+<section id="deals">
+
+
+
+    <h2>Special Package Deals</h2>
+
+
+
+    <div class="grid-container">
+
+
+
+        <a href="https://wa.me/923187196942?text=Hi, I am interested in your Full Kitchen Package Deal." class="wa-link">
+
+
+
+            <div class="deal-card">
+
+
+
+                <div class="promo-tag">LIMITED OFFER</div>
+
+
+
+                <h3>Full Kitchen With Material Pack</h3>
+
+
+
+                <p>Premium UV Gloss/Matte sheets with branded hardware + Profile Light & installation.</p>
+
+
+
+                <div class="price-tag">Rs. 5000(Square Feet)</div>
+
+
+
+                <p class="click-hint">Tap to get Offer</p>
+
+
+
+            </div>
+
+
+
+        </a>
+
+
+
+
+
+
+
+        <a href="https://wa.me/923187196942?text=Hi, I want to know more about the Full House Makeover Offer." class="wa-link">
+
+
+
+            <div class="deal-card">
+
+
+
+                <div class="promo-tag">HOT DEAL</div>
+
+
+
+                <h3>Full House Makeover</h3>
+
+
+
+                <p>Wardrobes + Kitchens + Media Walls projects for your entire home.</p>
+
+
+
+                <div class="price-tag">Flat 15% OFF</div>
+
+
+
+                <p class="click-hint">Tap to claim offer</p>
+
+
+
+            </div>
+
+
+
+        </a>
+
+
+
+    </div>
+
+
+
+</section>
+
+
+
+
+
+
+
+<section id="project-status" style="background: #fdfaf7; border-radius: 30px; margin-bottom: 40px;">
+
+
+
+    <h2>Live Project Status</h2>
+
+
+
+    <p style="margin-top:-30px; margin-bottom:40px; color:#666;">Transparency is our priority. See what we are building right now.</p>
+
+
+
+    
+
+
+
+    <div class="grid-container">
+
+
+
+        <div class="card" style="border-left: 5px solid var(--success-color); padding: 20px; text-align: left;">
+
+
+
+            <div class="status-badge" style="background: #e8f5f3; color: var(--success-color);">● CURRENTLY WORKING</div>
+
+
+
+            <h3>Gojra - Shop Counter</h3>
+
+
+
+            <p style="font-size: 0.9rem;">Status: <strong>20% Completed</strong> (Cutting)</p>
+
+
+
+            <div class="progress-bar-bg">
+
+
+
+                <div class="progress-fill" style="background: var(--success-color); width: 80%;"></div>
+
+
+
+            </div>
+
+
+
+            <p class="click-hint" style="color: var(--success-color);">Expected Delivery: 5 days</p>
+
+
+
+        </div>
+
+
+
+
+
+
+
+        <div class="card" style="border-left: 5px solid var(--primary-color); padding: 20px; text-align: left;">
+
+
+
+            <div class="status-badge" style="background: #fff3e0; color: var(--primary-color);">📅 NEXT IN LINE</div>
+
+
+
+            <h3>NEW PROJECT BOOKING OPEN</h3>
+
+
+
+            <p style="font-size: 0.9rem;">Status: <strong>Consultation & Design Phase</strong></p>
+
+
+
+            <div class="progress-bar-bg">
+
+
+
+                <div class="progress-fill" style="background: var(--primary-color); width: 25%;"></div>
+
+
+
+            </div>
+
+
+
+            <p class="click-hint">Schedule your site visit today!</p>
+
+
+
+        </div>
+
+
+
+
+
+
+
+        <div class="card" style="background: var(--dark-color); color: white; padding: 20px; text-align: left;">
+
+
+
+            <h3 style="color: var(--primary-color); margin-top: 10px;">Premium Quality Seal</h3>
+
+
+
+            <ul style="font-size: 0.85rem; padding-left: 15px; line-height: 1.8;">
+
+
+
+                <li>Premium Hardware Fittings</li>
+
+
+
+                <li>Termite Resistance Material</li>
+
+
+
+                <li>After-Sales Support & Service</li>
+
+
+
+                <li> Profile Lighting</li>
+
+
+
+            </ul>
+
+
+
+            <div style="border: 1px dashed var(--primary-color); padding: 10px; margin-top: 10px; font-weight: bold; text-align: center;">
+
+
+
+                100% Satisfaction Guaranteed
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+</section>
+
+
+
+
+
+
+
+<section id="services">
+
+
+
+    <h2>Our Expertise</h2>
+
+
+
+    <p style="margin-top:-30px; margin-bottom:40px; color:#666;">Choose a service to discuss on WhatsApp</p>
+
+
+
+    <div class="grid-container">
+
+
+
+        
+
+
+
+        <a href="https://wa.me/923187196942?text=Hi, I need a quote for an Italian Kitchen." class="wa-link">
+
+
+
+            <div class="card">
+
+
+
+                <div class="img-placeholder">Kitchens</div>
+
+
+
+                <div style="padding: 15px;">
+
+
+
+                    <h3>Italian Kitchens</h3>
+
+
+
+                    <p>Sleek, modern & high-end finish with smart storage.</p>
+
+
+
+                    <p class="click-hint">Get Consultation</p>
+
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+        </a>
+
+
+
+
+
+
+
+        <a href="https://wa.me/923187196942?text=Hi, I want to discuss a Modern Wardrobe design." class="wa-link">
+
+
+
+            <div class="card">
+
+
+
+                <div class="img-placeholder">Wardrobes</div>
+
+
+
+                <div style="padding: 15px;">
+
+
+
+                    <h3>Modern Wardrobes</h3>
+
+
+
+                    <p>Custom built-in & sliding designs for every room.</p>
+
+
+
+                    <p class="click-hint">Get Consultation</p>
+
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+        </a>
+
+
+
+
+
+
+
+        <a href="https://wa.me/923187196942?text=Hi, I have a Custom Woodwork Project to discuss." class="wa-link">
+
+
+
+            <div class="card">
+
+
+
+                <div class="img-placeholder">Custom Projects</div>
+
+
+
+                <div style="padding: 15px;">
+
+
+
+                    <h3>Custom Projects</h3>
+
+
+
+                    <p>Wardrobe , Kitchen,Media Walls, Office Work.</p>
+
+
+
+                    <p class="click-hint">Get Consultation</p>
+
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+        </a>
+
+
+
+
+
+
+
+    </div>
+
+
+
+</section>
+
+
+
+
+
+
+
+<section class="cta">
+
+
+
+    <h2>Start Your Dream Project Today</h2>
+
+
+
+    <p>Get a professional estimate for your home within 24 hours.</p>
+
+
+
+    <p style="font-size: 2.2rem; font-weight: 700; color: var(--primary-color); margin-bottom: 30px;">0318 7196942</p>
+
+
+
+    <button class="cta-btn" onclick="window.location.href='https://wa.me/923187196942'">Contact Now via WhatsApp</button>
+
+
+
+</section>
+
+
+
+
+
+
+
+<footer>
+
+
+
+    <p>© 2020 Woodcraft Creations By Mirza Zawar Woodworks</p>
+
+
+
+</footer>
+
+
+
+
+
+
+
+</body>
+
+
+
+</html>
