@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MZ Wood Works - Slider Fixed</title>
+    <title>MZ Wood Works - Slider Fixed Final</title>
     <style>
         * { box-sizing: border-box; }
         body { margin: 0; padding: 0; background: #e0e0e0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; overflow-x: hidden; }
@@ -53,7 +53,7 @@
         .menu-toggle { display: none; flex-direction: column; gap: 4px; cursor: pointer; margin-left: 20px; flex: 0; }
         .menu-toggle span { width: 20px; height: 2.5px; background: #2c1e12; border-radius: 2px; }
 
-        /* --- Slider Styling --- */
+        /* --- Slider Styling Fixed --- */
         .slider-container {
             width: 100%;
             max-width: 100vw;
@@ -64,13 +64,14 @@
 
         .slider-wrapper {
             display: flex;
-            width: 100%; /* Isey 100% rakha gaya hai container ke mutabiq */
             height: 100%;
+            /* Width 100% hatayi gayi hai taake flexibility bani rahe */
             transition: transform 0.8s cubic-bezier(0.45, 0, 0.55, 1);
         }
 
         .slide {
             min-width: 100%; /* Har slide poori screen cover kare gi */
+            width: 100%;
             height: 100%;
             flex-shrink: 0;
         }
@@ -137,7 +138,6 @@
             alert("Cart opening...");
         }
 
-        // --- Corrected Slider Logic ---
         let currentIndex = 0;
         const wrapper = document.getElementById('sliderWrapper');
         const slides = document.querySelectorAll('.slide');
@@ -148,11 +148,10 @@
             if (currentIndex >= totalSlides) {
                 currentIndex = 0;
             }
-            // Har slide 100% width ki hai, to displacement simple 100% hogi
+            // 100% move karega taake agli pic center mein aaye
             wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
         }
 
-        // Har 3.5 seconds baad image tabdeel hogi
         setInterval(nextSlide, 3500);
     </script>
 
