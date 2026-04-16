@@ -3,81 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MZ Wood Works - Slim Header</title>
+    <title>MZ Wood Works - Image Logo Header</title>
     <style>
         body { margin: 0; padding: 0; background: #e0e0e0; }
 
-        /* Header ki height kam karne ke liye padding 45px se 20px kar di */
         .header-bar {
             background-color: #2c1e12; 
             width: 100%;
-            padding: 20px 0; 
+            padding: 15px 0; /* Slim height */
             display: flex;
             justify-content: center;
             align-items: center;
             position: relative;
-            color: #f1b24a;
-            font-family: 'Arial Black', sans-serif;
             overflow: hidden;
             border-bottom: 4px solid #1a120b;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
 
-        .logo-container { text-align: center; position: relative; }
-
-        .letters {
-            font-size: 80px; /* Size halka sa kam kiya slim height ke liye */
+        .logo-container {
+            text-align: center;
+            position: relative;
             display: flex;
-            gap: -2px;
             justify-content: center;
-            line-height: 0.9;
-            margin-bottom: 5px; 
+            align-items: center;
         }
 
-        .m-letter, .z-letter {
+        /* Logo Image Styling */
+        .logo-img {
+            max-height: 80px; /* Aap isay apni marzi se chota bara kar saktay hain */
+            width: auto;
             opacity: 0;
-            display: inline-block;
             transform: scale(0.8);
-            filter: drop-shadow(0 0 15px #f1b24a);
-        }
-
-        .m-letter { 
-            animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards 0.5s,
-                      smoothGlow 3s ease-in-out infinite; 
-        }
-        
-        .z-letter { 
-            animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards 0.8s,
-                      smoothGlow 3s ease-in-out 0.5s infinite; 
-        }
-
-        .sub-text {
-            font-size: 20px; /* Sub-text ko bhi proportional rakha */
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 8px;
-            opacity: 0;
-            margin-top: 2px;
-            animation: fadeIn 1s forwards 1.5s;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            /* Glow effect jo image par nazar aaye ga */
+            filter: drop-shadow(0 0 10px #f1b24a);
+            animation: 
+                imgPopIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards 0.5s,
+                imgSmoothGlow 3s ease-in-out infinite;
         }
 
         /* --- Animations --- */
-        @keyframes popIn {
-            to { opacity: 1; transform: scale(1); }
+
+        /* Image ka jhatkay se zahir hona */
+        @keyframes imgPopIn {
+            to { 
+                opacity: 1; 
+                transform: scale(1); 
+            }
         }
 
-        @keyframes fadeIn {
-            to { opacity: 1; }
-        }
-
-        @keyframes smoothGlow {
+        /* Image par constant sunehri roshni ka effect */
+        @keyframes imgSmoothGlow {
             0%, 100% { 
-                filter: drop-shadow(0 0 10px #f1b24a);
-                text-shadow: 0 0 8px rgba(241, 178, 74, 0.6);
+                filter: drop-shadow(0 0 8px #f1b24a);
             }
             50% { 
-                filter: drop-shadow(0 0 20px #ffdb94);
-                text-shadow: 0 0 12px rgba(241, 178, 74, 0.9);
+                filter: drop-shadow(0 0 20px #ffdb94) brightness(1.1);
             }
         }
 
@@ -87,11 +67,7 @@
 
     <div class="header-bar">
         <div class="logo-container">
-            <div class="letters">
-                <span class="m-letter">M</span>
-                <span class="z-letter">Z</span>
-            </div>
-            <div class="sub-text">Wood Works</div>
+            <img src="hadder.jpg" alt="MZ Wood Works Logo" class="logo-img">
         </div>
     </div>
 
