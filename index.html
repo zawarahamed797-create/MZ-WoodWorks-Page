@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MZ Wood Works - Image Logo Header</title>
+    <title>MZ Wood Works - Header PNG</title>
     <style>
         body { margin: 0; padding: 0; background: #e0e0e0; }
 
         .header-bar {
             background-color: #2c1e12; 
             width: 100%;
-            padding: 15px 0; /* Slim height */
+            padding: 12px 0; /* Mazeed slim kiya gaya hai */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -30,12 +30,12 @@
 
         /* Logo Image Styling */
         .logo-img {
-            max-height: 80px; /* Aap isay apni marzi se chota bara kar saktay hain */
+            max-height: 70px; /* Height ko thora sa mazeed adjust kiya hai */
             width: auto;
             opacity: 0;
             transform: scale(0.8);
-            /* Glow effect jo image par nazar aaye ga */
-            filter: drop-shadow(0 0 10px #f1b24a);
+            /* Sunehri glow effect */
+            filter: drop-shadow(0 0 8px #f1b24a);
             animation: 
                 imgPopIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards 0.5s,
                 imgSmoothGlow 3s ease-in-out infinite;
@@ -43,7 +43,6 @@
 
         /* --- Animations --- */
 
-        /* Image ka jhatkay se zahir hona */
         @keyframes imgPopIn {
             to { 
                 opacity: 1; 
@@ -51,23 +50,21 @@
             }
         }
 
-        /* Image par constant sunehri roshni ka effect */
         @keyframes imgSmoothGlow {
             0%, 100% { 
-                filter: drop-shadow(0 0 8px #f1b24a);
+                filter: drop-shadow(0 0 10px #f1b24a);
             }
             50% { 
-                filter: drop-shadow(0 0 20px #ffdb94) brightness(1.1);
+                filter: drop-shadow(0 0 22px #ffdb94) brightness(1.1);
             }
         }
-
     </style>
 </head>
 <body>
 
     <div class="header-bar">
         <div class="logo-container">
-            <img src="hadder.jpg" alt="MZ Wood Works Logo" class="logo-img">
+            <img src="hadder.png" alt="MZ Wood Works Logo" class="logo-img">
         </div>
     </div>
 
