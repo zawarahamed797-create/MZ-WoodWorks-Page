@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MZ Wood Works - Header PNG</title>
+    <title>MZ Wood Works - White Header</title>
     <style>
         body { margin: 0; padding: 0; background: #e0e0e0; }
 
         .header-bar {
-            background-color: #2c1e12; 
+            background-color: #ffffff; /* Background White kar diya gaya hai */
             width: 100%;
-            padding: 12px 0; /* Mazeed slim kiya gaya hai */
+            padding: 12px 0; 
             display: flex;
             justify-content: center;
             align-items: center;
             position: relative;
             overflow: hidden;
-            border-bottom: 4px solid #1a120b;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            border-bottom: 2px solid #ddd; /* Light border taake white page par nazar aaye */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
 
         .logo-container {
@@ -30,11 +30,11 @@
 
         /* Logo Image Styling */
         .logo-img {
-            max-height: 70px; /* Height ko thora sa mazeed adjust kiya hai */
+            max-height: 70px; 
             width: auto;
             opacity: 0;
             transform: scale(0.8);
-            /* Sunehri glow effect */
+            /* Glow effect (White background par ye halka golden saaya dega) */
             filter: drop-shadow(0 0 8px #f1b24a);
             animation: 
                 imgPopIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards 0.5s,
