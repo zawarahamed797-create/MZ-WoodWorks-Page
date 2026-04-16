@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MZ Wood Works - Search & Manual Slider</title>
+    <title>MZ Wood Works - Menu Added</title>
     <style>
         * { box-sizing: border-box; }
         body { margin: 0; padding: 0; background: #e0e0e0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; overflow-x: hidden; }
@@ -11,7 +11,7 @@
         .header-bar {
             background-color: #ffffff;
             width: 100%;
-            padding: 10px 0;
+            padding: 10px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -21,15 +21,31 @@
             border-bottom: 1px solid #ddd;
         }
 
+        /* --- 3 Lines (Hamburger Menu) --- */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 1100;
+        }
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: #2c1e12;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
         .logo-container { flex: 2; text-align: center; }
         .logo-img { max-height: 85px; width: auto; filter: drop-shadow(0 0 8px #f1b24a); animation: imgSmoothGlow 3s ease-in-out infinite; }
 
-        .nav-menu { display: flex; gap: 20px; flex: 1; justify-content: flex-end; margin-right: 20px; }
+        .nav-menu { display: flex; gap: 20px; flex: 1; justify-content: flex-end; }
         .nav-menu a { text-decoration: none; color: #2c1e12; font-weight: bold; font-size: 14px; text-transform: uppercase; }
 
-        .cart-container { margin-right: 20px; cursor: pointer; font-size: 24px; }
+        .cart-container { margin-left: 20px; cursor: pointer; font-size: 24px; }
 
-        /* --- New Search Bar Style (Above Banner) --- */
+        /* --- Search Bar Style --- */
         .search-section {
             background: #f9f9f9;
             padding: 15px 0;
@@ -77,7 +93,6 @@
         .slide { min-width: 100%; height: 100%; }
         .slide img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* Navigation Arrows */
         .prev, .next {
             position: absolute;
             top: 50%;
@@ -89,15 +104,72 @@
             border: none;
             font-size: 20px;
             z-index: 10;
-            border-radius: 0 5px 5px 0;
-            transition: 0.3s;
         }
-        .next { right: 0; border-radius: 5px 0 0 5px; }
-        .prev:hover, .next:hover { background: rgba(241, 178, 74, 0.9); color: #2c1e12; }
+        .next { right: 0; }
 
+        /* --- New 3 Sections Styling --- */
+        .categories-container {
+            display: flex;
+            justify-content: space-around;
+            padding: 40px 10%;
+            gap: 20px;
+            background: #e0e0e0;
+        }
+
+        .category-card {
+            flex: 1;
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+            text-decoration: none;
+            color: #2c1e12;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: 0.3s;
+            border: 1px solid #ddd;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            border-color: #f1b24a;
+        }
+
+        .category-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .category-card h3 {
+            padding: 15px 0;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 18px;
+        }
+
+        /* Mobile Responsive for Menu */
         @media (max-width: 768px) {
-            .nav-menu { display: none; }
+            .menu-toggle { display: flex; }
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: #ffffff;
+                padding: 20px;
+                border-bottom: 1px solid #ddd;
+                text-align: center;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            .nav-menu.active { display: flex; }
             .slider-container { height: 250px; }
+            .categories-container { flex-direction: column; padding: 20px 5%; }
+            .category-card { margin-bottom: 20px; }
+            .logo-container { flex: 1; }
         }
 
         @keyframes imgSmoothGlow { 0%, 100% { filter: drop-shadow(0 0 8px #f1b24a); } 50% { filter: drop-shadow(0 0 18px #ffdb94); } }
@@ -106,10 +178,17 @@
 <body>
 
     <header class="header-bar">
+        <div class="menu-toggle" onclick="toggleMobileMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
         <div class="logo-container">
             <img src="hadder.png" alt="MZ Wood Works Logo" class="logo-img">
         </div>
-        <nav class="nav-menu">
+
+        <nav class="nav-menu" id="navMenu">
             <a href="#">Home</a>
             <a href="#">Products</a>
             <a href="#">Contact</a>
@@ -135,23 +214,38 @@
         </div>
     </div>
 
+    <div class="categories-container">
+        <a href="kitchen.html" class="category-card">
+            <img src="kitchen_thumb.jpg" alt="Kitchen">
+            <h3>Kitchen</h3>
+        </a>
+        <a href="wardrobe.html" class="category-card">
+            <img src="wardrobe_thumb.jpg" alt="Wardrobe">
+            <h3>Wardrobe</h3>
+        </a>
+        <a href="mediawall.html" class="category-card">
+            <img src="mediawall_thumb.jpg" alt="Media Wall">
+            <h3>Media Wall</h3>
+        </a>
+    </div>
+
     <script>
         function openCart() { alert("Cart opening..."); }
 
-        // --- Manual Slider Logic ---
+        // Mobile Menu Toggle Logic
+        function toggleMobileMenu() {
+            const nav = document.getElementById('navMenu');
+            nav.classList.toggle('active');
+        }
+
         let currentIndex = 0;
         const wrapper = document.getElementById('sliderWrapper');
         const slides = document.querySelectorAll('.slide');
 
         function moveSlide(direction) {
             currentIndex += direction;
-
-            if (currentIndex >= slides.length) {
-                currentIndex = 0; // Wapis pehli slide par
-            } else if (currentIndex < 0) {
-                currentIndex = slides.length - 1; // Akhri slide par
-            }
-
+            if (currentIndex >= slides.length) { currentIndex = 0; }
+            else if (currentIndex < 0) { currentIndex = slides.length - 1; }
             const offset = -currentIndex * 100;
             wrapper.style.transform = `translateX(${offset}%)`;
         }
