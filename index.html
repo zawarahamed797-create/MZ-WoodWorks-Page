@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MZ Wood Works</title>
+    <title>MZ Wood Works - Animated Header</title>
     <style>
         body { margin: 0; padding: 0; background: #e0e0e0; }
 
         .header-bar {
             background-color: #2c1e12; 
             width: 100%;
-            padding: 40px 0;
+            height: 180px; /* Thori height barhai hai admiyon ke liye */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -21,16 +21,28 @@
             border-bottom: 5px solid #1a120b;
         }
 
-        .gear {
+        /* 1. Hanging Men Symbols */
+        .worker {
             position: absolute;
             font-size: 50px;
-            opacity: 0.15;
-            animation: gearRotate 8s linear infinite;
+            z-index: 10;
+            opacity: 0;
+            animation: moveWorkers 2.5s ease-out forwards;
         }
-        .gear-left { left: 30px; top: 20px; }
-        .gear-right { right: 30px; bottom: 20px; animation-direction: reverse; }
+        
+        .worker-left {
+            left: -100px; /* Screen se bahar start */
+            top: 20px;
+        }
 
-        .logo-container { text-align: center; position: relative; }
+        .worker-right {
+            right: -100px; /* Screen se bahar start */
+            top: 20px;
+            transform: scaleX(-1); /* Right worker ko reverse karna */
+            animation-name: moveWorkersRight;
+        }
+
+        .logo-container { text-align: center; position: relative; z-index: 5; }
 
         .letters {
             font-size: 70px;
@@ -45,32 +57,54 @@
             position: relative;
             display: inline-block;
             text-shadow: 2px 4px 5px rgba(0,0,0,0.5);
+            /* Initial drop shadow taake lagay ke light off hai */
+            filter: drop-shadow(0 0 5px transparent); 
         }
 
-        /* Screw Point - Letter ke andar ek chota hole feel dene ke liye */
+        /* Screw Point */
         .screw {
             position: absolute;
             font-size: 16px;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -150%); /* Start position upar */
+            transform: translate(-50%, -150%);
             opacity: 0;
             z-index: 5;
             filter: drop-shadow(0 2px 2px black);
         }
 
-        /* Keyframe Animations */
-        .m-letter { animation: fadeIn 0.3s forwards 0.5s, letterShake 0.2s 1.8s; }
-        .z-letter { animation: fadeIn 0.3s forwards 2.5s, letterShake 0.2s 3.8s; }
+        /* --- Animations Logic --- */
 
-        /* Screw tightening and sinking into wood effect */
-        .m-letter .screw {
-            animation: screwIntoWood 1.5s ease-in-out 0.8s forwards;
+        /* Admiyon ki entry aur exit */
+        @keyframes moveWorkers {
+            0% { left: -100px; opacity: 0; }
+            30% { left: 45%; opacity: 1; } /* Letter tak pohanchna */
+            80% { left: 45%; opacity: 1; } /* Thori der rukna */
+            100% { left: 45%; opacity: 0; } /* Gayab ho jana (hang karke) */
+        }
+        
+        @keyframes moveWorkersRight {
+            0% { right: -100px; opacity: 0; transform: scaleX(-1); }
+            30% { right: 45%; opacity: 1; transform: scaleX(-1); } /* Letter tak pohanchna */
+            80% { right: 45%; opacity: 1; transform: scaleX(-1); } /* Thori der rukna */
+            100% { right: 45%; opacity: 0; transform: scaleX(-1); } /* Gayab ho jana (hang karke) */
         }
 
-        .z-letter .screw {
-            animation: screwIntoWood 1.5s ease-in-out 2.8s forwards;
+        /* Letters ka appear hona aur shake karna */
+        .m-letter { 
+            animation: fadeIn 0.3s forwards 0.8s, /* Admi lagane ke baad */
+                      letterShake 0.2s 2.2s, /* Screw lagne par */
+                      lightOn 1.5s ease-in-out 4.8s infinite; /* Aakhir mein light */
         }
+        .z-letter { 
+            animation: fadeIn 0.3s forwards 2.8s, /* Dusra admi lagane ke baad */
+                      letterShake 0.2s 4.2s, /* Screw lagne par */
+                      lightOn 1.5s ease-in-out 5.3s infinite; /* Z ke liye different light timing */
+        }
+
+        /* Screw tight hona aur dhasna */
+        .m-letter .screw { animation: screwIntoWood 1s ease-in-out 1.2s forwards; }
+        .z-letter .screw { animation: screwIntoWood 1s ease-in-out 3.2s forwards; }
 
         .sub-text {
             font-size: 22px;
@@ -80,27 +114,16 @@
             opacity: 0;
             transform: scaleX(0);
             border-top: 2px solid #f1b24a;
-            animation: borderExpand 0.8s forwards 4.5s;
+            animation: borderExpand 0.8s forwards 5s;
         }
 
+        /* -- Keyframes Definitions -- */
         @keyframes fadeIn { to { opacity: 1; } }
 
-        @keyframes gearRotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-
         @keyframes screwIntoWood {
-            0% { 
-                opacity: 0; 
-                transform: translate(-50%, -100px) rotate(0deg) scale(2); 
-            }
-            30% { 
-                opacity: 1; 
-                transform: translate(-50%, -50%) rotate(360deg) scale(1.2); 
-            }
-            100% { 
-                opacity: 1; 
-                transform: translate(-50%, -50%) rotate(1440deg) scale(0.7); /* Scale chota hona matlab andar dhas gaya */
-                filter: contrast(1.2) brightness(0.8);
-            }
+            0% { opacity: 0; transform: translate(-50%, -100px) rotate(0deg) scale(2); }
+            30% { opacity: 1; transform: translate(-50%, -50%) rotate(360deg) scale(1.2); }
+            100% { opacity: 1; transform: translate(-50%, -50%) rotate(1440deg) scale(0.7); filter: contrast(1.2) brightness(0.8); }
         }
 
         @keyframes letterShake {
@@ -108,16 +131,21 @@
             50% { transform: translateY(3px); }
         }
 
-        @keyframes borderExpand {
-            to { opacity: 1; transform: scaleX(1); }
+        @keyframes borderExpand { to { opacity: 1; transform: scaleX(1); } }
+
+        /* 2. Light Effect Animation */
+        @keyframes lightOn {
+            0%, 100% { filter: drop-shadow(0 0 8px #f1b24a); }
+            50% { filter: drop-shadow(0 0 15px #fbd171); }
         }
+
     </style>
 </head>
 <body>
 
     <div class="header-bar">
-        <div class="gear gear-left">⚙️</div>
-        <div class="gear gear-right">⚙️</div>
+        <div class="worker worker-left">🧑‍🔧</div>
+        <div class="worker worker-right">🧑‍🔧</div>
 
         <div class="logo-container">
             <div class="letters">
