@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MZ Wood Works - Menu Added</title>
+    <title>MZ Wood Works - Double Manual Slider</title>
     <style>
         * { box-sizing: border-box; }
         body { margin: 0; padding: 0; background: #e0e0e0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; overflow-x: hidden; }
@@ -21,7 +21,6 @@
             border-bottom: 1px solid #ddd;
         }
 
-        /* --- 3 Lines (Hamburger Menu) --- */
         .menu-toggle {
             display: none;
             flex-direction: column;
@@ -45,7 +44,7 @@
 
         .cart-container { margin-left: 20px; cursor: pointer; font-size: 24px; }
 
-        /* --- Search Bar Style --- */
+        /* --- Search Bar --- */
         .search-section {
             background: #f9f9f9;
             padding: 15px 0;
@@ -78,20 +77,45 @@
             font-weight: bold;
         }
 
-        /* --- Manual Slider Styling --- */
+        /* --- Sliders Common Styling --- */
         .slider-container {
             width: 100%;
             height: 400px; 
             overflow: hidden;
             position: relative;
+            background: #fff;
         }
+        
+        /* Chota Slider height (Sections ke liye) */
+        .category-slider {
+            height: 300px;
+            margin-top: 20px;
+            border-top: 2px solid #2c1e12;
+        }
+
         .slider-wrapper {
             display: flex;
             height: 100%;
             transition: transform 0.6s ease-in-out;
         }
-        .slide { min-width: 100%; height: 100%; }
+        .slide { min-width: 100%; height: 100%; position: relative; }
         .slide img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* Slide Label */
+        .slide-label {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(44, 30, 18, 0.8);
+            color: #f1b24a;
+            padding: 10px 30px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
 
         .prev, .next {
             position: absolute;
@@ -107,49 +131,6 @@
         }
         .next { right: 0; }
 
-        /* --- New 3 Sections Styling --- */
-        .categories-container {
-            display: flex;
-            justify-content: space-around;
-            padding: 40px 10%;
-            gap: 20px;
-            background: #e0e0e0;
-        }
-
-        .category-card {
-            flex: 1;
-            background: #fff;
-            border-radius: 10px;
-            overflow: hidden;
-            text-align: center;
-            text-decoration: none;
-            color: #2c1e12;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: 0.3s;
-            border: 1px solid #ddd;
-        }
-
-        .category-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-            border-color: #f1b24a;
-        }
-
-        .category-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .category-card h3 {
-            padding: 15px 0;
-            margin: 0;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 18px;
-        }
-
-        /* Mobile Responsive for Menu */
         @media (max-width: 768px) {
             .menu-toggle { display: flex; }
             .nav-menu {
@@ -161,15 +142,12 @@
                 width: 100%;
                 background: #ffffff;
                 padding: 20px;
-                border-bottom: 1px solid #ddd;
                 text-align: center;
                 box-shadow: 0 5px 10px rgba(0,0,0,0.1);
             }
             .nav-menu.active { display: flex; }
             .slider-container { height: 250px; }
-            .categories-container { flex-direction: column; padding: 20px 5%; }
-            .category-card { margin-bottom: 20px; }
-            .logo-container { flex: 1; }
+            .category-slider { height: 220px; }
         }
 
         @keyframes imgSmoothGlow { 0%, 100% { filter: drop-shadow(0 0 8px #f1b24a); } 50% { filter: drop-shadow(0 0 18px #ffdb94); } }
@@ -179,15 +157,11 @@
 
     <header class="header-bar">
         <div class="menu-toggle" onclick="toggleMobileMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
+            <span></span><span></span><span></span>
         </div>
-
         <div class="logo-container">
             <img src="hadder.png" alt="MZ Wood Works Logo" class="logo-img">
         </div>
-
         <nav class="nav-menu" id="navMenu">
             <a href="#">Home</a>
             <a href="#">Products</a>
@@ -204,49 +178,59 @@
     </div>
 
     <div class="slider-container">
-        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-        <button class="next" onclick="moveSlide(1)">&#10095;</button>
-        
-        <div class="slider-wrapper" id="sliderWrapper">
+        <button class="prev" onclick="moveSlide('mainWrapper', -1)">&#10094;</button>
+        <button class="next" onclick="moveSlide('mainWrapper', 1)">&#10095;</button>
+        <div class="slider-wrapper" id="mainWrapper">
             <div class="slide"><img src="banner1.jpg" alt="Wood Work 1"></div>
             <div class="slide"><img src="banner2.jpg" alt="Wood Work 2"></div>
             <div class="slide"><img src="banner3.jpg" alt="Wood Work 3"></div>
         </div>
     </div>
 
-    <div class="categories-container">
-        <a href="kitchen.html" class="category-card">
-            <img src="kitchen_thumb.jpg" alt="Kitchen">
-            <h3>Kitchen</h3>
-        </a>
-        <a href="wardrobe.html" class="category-card">
-            <img src="wardrobe_thumb.jpg" alt="Wardrobe">
-            <h3>Wardrobe</h3>
-        </a>
-        <a href="mediawall.html" class="category-card">
-            <img src="mediawall_thumb.jpg" alt="Media Wall">
-            <h3>Media Wall</h3>
-        </a>
+    <div class="slider-container category-slider">
+        <button class="prev" onclick="moveSlide('catWrapper', -1)">&#10094;</button>
+        <button class="next" onclick="moveSlide('catWrapper', 1)">&#10095;</button>
+        <div class="slider-wrapper" id="catWrapper">
+            <div class="slide">
+                <img src="kitchen_thumb.jpg" alt="Kitchen">
+                <a href="kitchen.html" class="slide-label">Kitchen</a>
+            </div>
+            <div class="slide">
+                <img src="wardrobe_thumb.jpg" alt="Wardrobe">
+                <a href="wardrobe.html" class="slide-label">Wardrobe</a>
+            </div>
+            <div class="slide">
+                <img src="mediawall.html" alt="Media Wall">
+                <a href="mediawall.html" class="slide-label">Media Wall</a>
+            </div>
+        </div>
     </div>
 
     <script>
         function openCart() { alert("Cart opening..."); }
-
-        // Mobile Menu Toggle Logic
         function toggleMobileMenu() {
-            const nav = document.getElementById('navMenu');
-            nav.classList.toggle('active');
+            document.getElementById('navMenu').classList.toggle('active');
         }
 
-        let currentIndex = 0;
-        const wrapper = document.getElementById('sliderWrapper');
-        const slides = document.querySelectorAll('.slide');
+        // Logic for both sliders
+        const sliderStates = {
+            mainWrapper: 0,
+            catWrapper: 0
+        };
 
-        function moveSlide(direction) {
-            currentIndex += direction;
-            if (currentIndex >= slides.length) { currentIndex = 0; }
-            else if (currentIndex < 0) { currentIndex = slides.length - 1; }
-            const offset = -currentIndex * 100;
+        function moveSlide(wrapperId, direction) {
+            const wrapper = document.getElementById(wrapperId);
+            const slides = wrapper.querySelectorAll('.slide');
+            
+            sliderStates[wrapperId] += direction;
+
+            if (sliderStates[wrapperId] >= slides.length) {
+                sliderStates[wrapperId] = 0;
+            } else if (sliderStates[wrapperId] < 0) {
+                sliderStates[wrapperId] = slides.length - 1;
+            }
+
+            const offset = -sliderStates[wrapperId] * 100;
             wrapper.style.transform = `translateX(${offset}%)`;
         }
     </script>
