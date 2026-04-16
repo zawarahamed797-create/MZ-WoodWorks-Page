@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MZ Wood Works - Search & Static Banner</title>
+    <title>MZ Wood Works - Search & Manual Slider</title>
     <style>
         * { box-sizing: border-box; }
         body { margin: 0; padding: 0; background: #e0e0e0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; overflow-x: hidden; }
@@ -19,174 +19,142 @@
             top: 0;
             z-index: 1000;
             border-bottom: 1px solid #ddd;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         .logo-container { flex: 2; text-align: center; }
-
-        .logo-img {
-            max-height: 85px;
-            width: auto;
-            opacity: 0;
-            transform: scale(0.8);
-            filter: drop-shadow(0 0 8px #f1b24a);
-            animation: imgPopIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards 0.5s,
-                       imgSmoothGlow 3s ease-in-out infinite;
-        }
+        .logo-img { max-height: 85px; width: auto; filter: drop-shadow(0 0 8px #f1b24a); animation: imgSmoothGlow 3s ease-in-out infinite; }
 
         .nav-menu { display: flex; gap: 20px; flex: 1; justify-content: flex-end; margin-right: 20px; }
+        .nav-menu a { text-decoration: none; color: #2c1e12; font-weight: bold; font-size: 14px; text-transform: uppercase; }
 
-        .nav-menu a {
-            text-decoration: none;
-            color: #2c1e12;
-            font-weight: bold;
-            font-size: 14px;
-            transition: 0.3s;
-            text-transform: uppercase;
+        .cart-container { margin-right: 20px; cursor: pointer; font-size: 24px; }
+
+        /* --- New Search Bar Style (Above Banner) --- */
+        .search-section {
+            background: #f9f9f9;
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            border-bottom: 1px solid #ddd;
         }
-
-        .nav-menu a:hover { color: #f1b24a; }
-
-        .cart-container { flex: 0; margin-right: 20px; cursor: pointer; position: relative; font-size: 24px; color: #2c1e12; transition: 0.3s; }
-        .cart-container:hover { color: #f1b24a; }
-
-        .menu-toggle { display: none; flex-direction: column; gap: 4px; cursor: pointer; margin-left: 20px; flex: 0; }
-        .menu-toggle span { width: 20px; height: 2.5px; background: #2c1e12; border-radius: 2px; }
-
-        /* --- Banner & Search Styling --- */
-        .slider-container {
-            width: 100%;
-            max-width: 100vw;
-            height: 400px; 
+        .search-container {
+            width: 90%;
+            max-width: 800px;
+            display: flex;
+            background: #fff;
+            border: 2px solid #2c1e12;
+            border-radius: 5px;
             overflow: hidden;
-            position: relative;
-            display: flex;
-            align-items: center; /* Vertical center for search */
-            justify-content: center; /* Horizontal center for search */
         }
-
-        .slider-wrapper {
-            display: flex;
-            height: 100%;
-            width: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 1;
-        }
-
-        .slide {
-            min-width: 100%; 
-            height: 100%;
-            flex-shrink: 0;
-        }
-
-        .slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: brightness(0.7); /* Background image ko thora dark kiya taake search bar nazar aaye */
-        }
-
-        /* Search Bar Over Banner */
-        .search-overlay {
-            position: relative;
-            z-index: 10;
-            width: 80%;
-            max-width: 600px;
-            display: flex;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 5px;
-            border-radius: 50px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-
-        .search-overlay input {
+        .search-container input {
             flex: 1;
             border: none;
-            padding: 12px 20px;
-            border-radius: 50px;
+            padding: 10px 15px;
             outline: none;
             font-size: 16px;
         }
-
-        .search-button {
+        .search-container button {
             background: #2c1e12;
             color: #f1b24a;
             border: none;
-            padding: 10px 25px;
-            border-radius: 50px;
+            padding: 0 20px;
             cursor: pointer;
             font-weight: bold;
+        }
+
+        /* --- Manual Slider Styling --- */
+        .slider-container {
+            width: 100%;
+            height: 400px; 
+            overflow: hidden;
+            position: relative;
+        }
+        .slider-wrapper {
+            display: flex;
+            height: 100%;
+            transition: transform 0.6s ease-in-out;
+        }
+        .slide { min-width: 100%; height: 100%; }
+        .slide img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* Navigation Arrows */
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(44, 30, 18, 0.7);
+            color: #f1b24a;
+            padding: 15px;
+            cursor: pointer;
+            border: none;
+            font-size: 20px;
+            z-index: 10;
+            border-radius: 0 5px 5px 0;
             transition: 0.3s;
         }
-
-        .search-button:hover {
-            background: #f1b24a;
-            color: #2c1e12;
-        }
+        .next { right: 0; border-radius: 5px 0 0 5px; }
+        .prev:hover, .next:hover { background: rgba(241, 178, 74, 0.9); color: #2c1e12; }
 
         @media (max-width: 768px) {
-            .nav-menu { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; background: #ffffff; width: 100%; border-bottom: 1px solid #ddd; padding: 20px 0; text-align: center; box-shadow: 0 5px 10px rgba(0,0,0,0.1); }
-            .nav-menu.active { display: flex; }
-            .menu-toggle { display: flex; }
-            .logo-container { flex: 1; }
-            .cart-container { margin-right: 15px; }
-            .slider-container { height: 250px; } 
-            .search-overlay { width: 90%; }
+            .nav-menu { display: none; }
+            .slider-container { height: 250px; }
         }
 
-        @keyframes imgPopIn { to { opacity: 1; transform: scale(1); } }
-        @keyframes imgSmoothGlow { 0%, 100% { filter: drop-shadow(0 0 8px #f1b24a); } 50% { filter: drop-shadow(0 0 18px #ffdb94) brightness(1.1); } }
+        @keyframes imgSmoothGlow { 0%, 100% { filter: drop-shadow(0 0 8px #f1b24a); } 50% { filter: drop-shadow(0 0 18px #ffdb94); } }
     </style>
 </head>
 <body>
 
     <header class="header-bar">
-        <div class="menu-toggle" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-
         <div class="logo-container">
             <img src="hadder.png" alt="MZ Wood Works Logo" class="logo-img">
         </div>
-
-        <nav class="nav-menu" id="navMenu">
+        <nav class="nav-menu">
             <a href="#">Home</a>
-            <a href="#">Services</a>
             <a href="#">Products</a>
             <a href="#">Contact</a>
         </nav>
-
-        <div class="cart-container" onclick="openCart()">
-            🛒
-        </div>
+        <div class="cart-container" onclick="openCart()">🛒</div>
     </header>
 
-    <div class="slider-container">
-        <div class="slider-wrapper">
-            <div class="slide"><img src="banner1.jpg" alt="Wood Work"></div>
+    <div class="search-section">
+        <div class="search-container">
+            <input type="text" placeholder="Search for sofa, beds, or custom wood work...">
+            <button>SEARCH</button>
         </div>
+    </div>
 
-        <div class="search-overlay">
-            <input type="text" placeholder="Search furniture, wood works...">
-            <button class="search-button">Search</button>
+    <div class="slider-container">
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        
+        <div class="slider-wrapper" id="sliderWrapper">
+            <div class="slide"><img src="banner1.jpg" alt="Wood Work 1"></div>
+            <div class="slide"><img src="banner2.jpg" alt="Wood Work 2"></div>
+            <div class="slide"><img src="banner3.jpg" alt="Wood Work 3"></div>
         </div>
     </div>
 
     <script>
-        function toggleMenu() {
-            const menu = document.getElementById('navMenu');
-            menu.classList.toggle('active');
-        }
+        function openCart() { alert("Cart opening..."); }
 
-        function openCart() {
-            alert("Cart opening...");
-        }
+        // --- Manual Slider Logic ---
+        let currentIndex = 0;
+        const wrapper = document.getElementById('sliderWrapper');
+        const slides = document.querySelectorAll('.slide');
 
-        // Auto slide wala code remove kar diya gaya hai.
+        function moveSlide(direction) {
+            currentIndex += direction;
+
+            if (currentIndex >= slides.length) {
+                currentIndex = 0; // Wapis pehli slide par
+            } else if (currentIndex < 0) {
+                currentIndex = slides.length - 1; // Akhri slide par
+            }
+
+            const offset = -currentIndex * 100;
+            wrapper.style.transform = `translateX(${offset}%)`;
+        }
     </script>
 
 </body>
