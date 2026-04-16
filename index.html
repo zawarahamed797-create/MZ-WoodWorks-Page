@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MZ Wood Works - Compact Glow</title>
+    <title>MZ Wood Works - Bold & Compact</title>
     <style>
         body { margin: 0; padding: 0; background: #e0e0e0; }
 
         .header-bar {
             background-color: #2c1e12; 
             width: 100%;
-            padding: 40px 0;
+            padding: 45px 0;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -26,24 +26,22 @@
         .letters {
             font-size: 90px;
             display: flex;
-            gap: -5px; /* Space kam karne ke liye negative gap */
+            gap: -2px; /* M aur Z ke darmiyan halki si space */
             justify-content: center;
-            line-height: 0.8; /* Vertically space kam karne ke liye */
-            margin-bottom: 0;
+            line-height: 1; /* Normal spacing */
+            margin-bottom: 8px; /* Wood works se thora door rakhne ke liye */
         }
 
         .m-letter, .z-letter {
             opacity: 0;
             display: inline-block;
             transform: scale(0.8);
-            /* Constant Light Effect jo blink nahi karega */
             filter: drop-shadow(0 0 15px #f1b24a);
         }
 
         .m-letter { 
             animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards 0.5s,
                       smoothGlow 3s ease-in-out infinite; 
-            margin-right: -2px; /* M aur Z ko mazeed qareeb lane ke liye */
         }
         
         .z-letter { 
@@ -52,12 +50,14 @@
         }
 
         .sub-text {
-            font-size: 22px;
+            font-size: 24px; /* Size thora barhaya */
+            font-weight: 900; /* Extra Bold */
             text-transform: uppercase;
-            letter-spacing: 10px;
+            letter-spacing: 8px;
             opacity: 0;
-            margin-top: -5px; /* Wood Works ko MZ ke kareeb karne ke liye */
+            margin-top: 5px; /* Thori si space MZ ke niche */
             animation: fadeIn 1s forwards 1.5s;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* Mazeed bold look ke liye */
         }
 
         /* --- Animations --- */
@@ -70,14 +70,13 @@
             to { opacity: 1; }
         }
 
-        /* Blink ke bajaye constant smooth glow */
         @keyframes smoothGlow {
             0%, 100% { 
                 filter: drop-shadow(0 0 12px #f1b24a);
                 text-shadow: 0 0 8px rgba(241, 178, 74, 0.6);
             }
             50% { 
-                filter: drop-shadow(0 0 20px #ffdb94);
+                filter: drop-shadow(0 0 22px #ffdb94);
                 text-shadow: 0 0 12px rgba(241, 178, 74, 0.9);
             }
         }
