@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MZ Wood Works - Clean Animation</title>
+    <title>MZ Wood Works - Compact Glow</title>
     <style>
         body { margin: 0; padding: 0; background: #e0e0e0; }
 
         .header-bar {
             background-color: #2c1e12; 
             width: 100%;
-            padding: 50px 0;
+            padding: 40px 0;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -19,78 +19,66 @@
             font-family: 'Arial Black', sans-serif;
             overflow: hidden;
             border-bottom: 5px solid #1a120b;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
 
         .logo-container { text-align: center; position: relative; }
 
         .letters {
-            font-size: 80px;
+            font-size: 90px;
             display: flex;
-            gap: 10px;
+            gap: -5px; /* Space kam karne ke liye negative gap */
             justify-content: center;
-            line-height: 1;
-            margin-bottom: 10px;
+            line-height: 0.8; /* Vertically space kam karne ke liye */
+            margin-bottom: 0;
         }
 
         .m-letter, .z-letter {
             opacity: 0;
             display: inline-block;
-            transform: scale(0.5);
-            filter: drop-shadow(0 0 0px transparent);
+            transform: scale(0.8);
+            /* Constant Light Effect jo blink nahi karega */
+            filter: drop-shadow(0 0 15px #f1b24a);
         }
 
-        /* Letters Reveal Animation */
         .m-letter { 
             animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards 0.5s,
-                      lightOn 2s ease-in-out 2.5s infinite; 
+                      smoothGlow 3s ease-in-out infinite; 
+            margin-right: -2px; /* M aur Z ko mazeed qareeb lane ke liye */
         }
         
         .z-letter { 
-            animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards 1s,
-                      lightOn 2s ease-in-out 3s infinite; 
+            animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards 0.8s,
+                      smoothGlow 3s ease-in-out 0.5s infinite; 
         }
 
-        /* Sub-text (Wood Works) */
         .sub-text {
-            font-size: 24px;
+            font-size: 22px;
             text-transform: uppercase;
-            letter-spacing: 15px;
+            letter-spacing: 10px;
             opacity: 0;
-            transform: translateY(20px);
-            border-top: 2px solid #f1b24a;
-            padding-top: 10px;
-            animation: slideUp 0.8s forwards 1.8s;
+            margin-top: -5px; /* Wood Works ko MZ ke kareeb karne ke liye */
+            animation: fadeIn 1s forwards 1.5s;
         }
 
-        /* --- Keyframes --- */
+        /* --- Animations --- */
 
-        /* Letters ka jhatkay se ana */
         @keyframes popIn {
-            to { 
-                opacity: 1; 
-                transform: scale(1); 
-            }
+            to { opacity: 1; transform: scale(1); }
         }
 
-        /* Light Glow Effect (Jo hamesha chalta rahay ga) */
-        @keyframes lightOn {
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        /* Blink ke bajaye constant smooth glow */
+        @keyframes smoothGlow {
             0%, 100% { 
-                filter: drop-shadow(0 0 10px #f1b24a);
-                text-shadow: 0 0 5px rgba(241, 178, 74, 0.5);
+                filter: drop-shadow(0 0 12px #f1b24a);
+                text-shadow: 0 0 8px rgba(241, 178, 74, 0.6);
             }
             50% { 
-                filter: drop-shadow(0 0 25px #ffdb94);
-                text-shadow: 0 0 15px rgba(241, 178, 74, 1);
-                transform: scale(1.02); /* Light ke saath halka sa swell effect */
-            }
-        }
-
-        /* Wood Works ka neechay se ana */
-        @keyframes slideUp {
-            to { 
-                opacity: 1; 
-                transform: translateY(0); 
+                filter: drop-shadow(0 0 20px #ffdb94);
+                text-shadow: 0 0 12px rgba(241, 178, 74, 0.9);
             }
         }
 
