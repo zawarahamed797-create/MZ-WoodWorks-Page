@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MZ Wood Works - Banner Fixed</title>
+    <title>MZ Wood Works - Banner Width Fixed</title>
     <style>
-        body { margin: 0; padding: 0; background: #e0e0e0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        /* Global Reset taake width bahar na jaye */
+        * { box-sizing: border-box; }
+        body { margin: 0; padding: 0; background: #e0e0e0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; overflow-x: hidden; }
 
         .header-bar {
             background-color: #ffffff;
@@ -52,10 +54,11 @@
         .menu-toggle { display: none; flex-direction: column; gap: 4px; cursor: pointer; margin-left: 20px; flex: 0; }
         .menu-toggle span { width: 20px; height: 2.5px; background: #2c1e12; border-radius: 2px; }
 
-        /* --- Updated Slider Styling --- */
+        /* --- Width Fix for Slider --- */
         .slider-container {
             width: 100%;
-            height: 400px; /* Standard height for better visibility */
+            max-width: 100vw; /* Ensure it never exceeds screen width */
+            height: 400px; 
             overflow: hidden;
             position: relative;
             background-color: #fff;
@@ -69,7 +72,7 @@
         }
 
         .slide {
-            width: 100%;
+            width: calc(100% / 3); /* Sakhti se 1/3 width allocate ki */
             height: 100%;
             flex-shrink: 0;
         }
@@ -77,8 +80,7 @@
         .slide img {
             width: 100%;
             height: 100%;
-            /* Image ko frame mein stretch karke fit karne ke liye */
-            object-fit: fill; 
+            object-fit: cover; /* Behtar resolution ke liye cover wapis kiya magar width fix ke saath */
         }
 
         /* Mobile View */
@@ -88,7 +90,7 @@
             .menu-toggle { display: flex; }
             .logo-container { flex: 1; }
             .cart-container { margin-right: 15px; }
-            .slider-container { height: 200px; } /* Mobile par height mazeed kam ki taake pic saaf dikhay */
+            .slider-container { height: 250px; } 
         }
 
         @keyframes imgPopIn { to { opacity: 1; transform: scale(1); } }
@@ -147,8 +149,8 @@
             if (currentIndex >= slides.length) {
                 currentIndex = 0;
             }
-            const offset = -currentIndex * 100;
-            wrapper.style.transform = `translateX(${offset}%)`;
+            const offset = -currentIndex * (100 / 3); // Corrected offset for 300% width
+            wrapper.style.transform = `translateX(${offset * 3}%)`; // Adjusted for smooth transition
         }
 
         setInterval(nextSlide, 3500);
