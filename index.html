@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MZ Wood Works - Mobile Fitted with Hamburger</title>
+    <title>MZ Wood Works - 5 Banners per Category</title>
     <style>
         * { box-sizing: border-box; }
         body { 
@@ -28,7 +28,6 @@
             border-bottom: 1px solid #ddd;
         }
 
-        /* Hamburger Styling */
         .hamburger {
             display: flex;
             flex-direction: column;
@@ -69,7 +68,6 @@
 
         .cart-container { cursor: pointer; font-size: 20px; }
 
-        /* Mobile Menu Logic */
         @media (max-width: 768px) {
             .nav-menu {
                 display: none;
@@ -93,7 +91,6 @@
             .hamburger { display: none; }
         }
 
-        /* --- Search Bar Mobile Fit --- */
         .search-section {
             background: #f9f9f9;
             padding: 10px 0;
@@ -112,7 +109,6 @@
         .search-container input { flex: 1; border: none; padding: 8px 10px; outline: none; font-size: 14px; }
         .search-container button { background: #2c1e12; color: #f1b24a; border: none; padding: 0 15px; cursor: pointer; font-weight: bold; font-size: 12px; }
 
-        /* --- Slider Mobile Fit --- */
         .section-title {
             text-align: center;
             background: #2c1e12;
@@ -200,6 +196,9 @@
         <div class="slider-wrapper" id="mainWrapper">
             <div class="slide"><img src="banner1.jpg" alt="Main 1"></div>
             <div class="slide"><img src="banner2.jpg" alt="Main 2"></div>
+            <div class="slide"><img src="banner3.jpg" alt="Main 3"></div>
+            <div class="slide"><img src="banner4.jpg" alt="Main 4"></div>
+            <div class="slide"><img src="banner5.jpg" alt="Main 5"></div>
         </div>
     </div>
 
@@ -210,6 +209,9 @@
         <div class="slider-wrapper" id="kitchenWrapper">
             <div class="slide"><img src="kitchen1.jpg" alt="Kitchen 1"></div>
             <div class="slide"><img src="kitchen2.jpg" alt="Kitchen 2"></div>
+            <div class="slide"><img src="kitchen3.jpg" alt="Kitchen 3"></div>
+            <div class="slide"><img src="kitchen4.jpg" alt="Kitchen 4"></div>
+            <div class="slide"><img src="kitchen5.jpg" alt="Kitchen 5"></div>
         </div>
     </div>
 
@@ -220,11 +222,13 @@
         <div class="slider-wrapper" id="wardrobeWrapper">
             <div class="slide"><img src="wardrobe1.jpg" alt="Wardrobe 1"></div>
             <div class="slide"><img src="wardrobe2.jpg" alt="Wardrobe 2"></div>
+            <div class="slide"><img src="wardrobe3.jpg" alt="Wardrobe 3"></div>
+            <div class="slide"><img src="wardrobe4.jpg" alt="Wardrobe 4"></div>
+            <div class="slide"><img src="wardrobe5.jpg" alt="Wardrobe 5"></div>
         </div>
     </div>
 
     <script>
-        // Hamburger Toggle Function
         function toggleMenu() {
             const menu = document.getElementById('navMenu');
             menu.classList.toggle('active');
