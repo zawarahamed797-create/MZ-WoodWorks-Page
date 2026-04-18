@@ -16,23 +16,37 @@
         .accent-gold { color: var(--gold); }
         .bg-gold { background-color: var(--gold); }
         
-        /* Cinematic Hero Overlay */
         .hero-bg {
             background: linear-gradient(to bottom, rgba(0,0,0,0.5), var(--dark)), url('hadder1.jpg');
             background-size: cover;
             background-position: center;
         }
 
-        /* Luxury Hover Effects */
         .gallery-item { overflow: hidden; position: relative; }
         .gallery-item img { transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1); filter: grayscale(20%); }
         .gallery-item:hover img { transform: scale(1.1); filter: grayscale(0%); }
         
         .nav-link { letter-spacing: 0.2em; font-size: 0.7rem; transition: color 0.3s; }
         .nav-link:hover { color: var(--gold); }
+
+        /* Full Screen Menu Styles */
+        #mobile-menu {
+            transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+            transform: translateX(100%);
+        }
+        #mobile-menu.active {
+            transform: translateX(0);
+        }
     </style>
 </head>
 <body>
+
+    <div id="mobile-menu" class="fixed inset-0 bg-black z- flex flex-col justify-center items-center gap-8 text-center">
+        <button onclick="toggleMenu()" class="absolute top-10 right-10 text-white text-4xl font-light">&times;</button>
+        <a href="#" onclick="toggleMenu()" class="text-3xl font-serif hover:text-[#c2a47e] transition-colors">Collection</a>
+        <a href="#" onclick="toggleMenu()" class="text-3xl font-serif hover:text-[#c2a47e] transition-colors">Process</a>
+        <a href="#" onclick="toggleMenu()" class="text-3xl font-serif hover:text-[#c2a47e] transition-colors">Contact</a>
+    </div>
 
     <nav class="flex justify-between items-center px-10 py-8 fixed w-full z-50 bg-gradient-to-b from-black/90 to-transparent">
         <div class="hidden md:flex gap-8">
@@ -46,7 +60,7 @@
 
         <div class="flex items-center gap-8">
             <a href="#" class="nav-link uppercase hidden md:block">Contact</a>
-            <div class="space-y-1.5 cursor-pointer group">
+            <div onclick="toggleMenu()" class="space-y-1.5 cursor-pointer group">
                 <div class="w-8 h-0.5 bg-white group-hover:bg-gold transition-colors"></div>
                 <div class="w-8 h-0.5 bg-white group-hover:bg-gold transition-colors"></div>
             </div>
@@ -54,7 +68,7 @@
     </nav>
 
     <header class="hero-bg h-screen flex flex-col justify-center items-center text-center px-6">
-        <span data-aos="fade-down" class="text-[10px] uppercase tracking-[0.5em] accent-gold mb-8 font-medium">Est. 2026 | Master Craftsmanship</span>
+        <span data-aos="fade-down" class="text-[10px] uppercase tracking-[0.5em] accent-gold mb-8 mt-12 font-medium">Est. 2026 | Master Craftsmanship</span>
         <h1 data-aos="fade-up" data-aos-delay="200" class="text-6xl md:text-9xl font-serif leading-tight mb-8">
             Furniture that<br><span class="italic font-normal">outlasts trends.</span>
         </h1>
@@ -131,7 +145,12 @@
             once: true,
             easing: 'ease-out-quad'
         });
+
+        // Mobile Menu Function
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('active');
+        }
     </script>
 </body>
-          </html>
-          
+</html>
