@@ -1,17 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <title>MZ Wood Works</title>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="/assets/index-C8-unoNO.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-DCaTu_cX.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  <script src="https://replit-cdn.com/replit-pill/replit-pill.global.js" data-referral-code="qitjxf30chy1" data-repl-id="7469c69c-5c41-46c7-b8a4-d9c612cea863"></script></body>
-</html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MZ Wood Works | Bespoke Furniture Atelier</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root { --gold: #c2a47e; --dark: #0a0a0a; }
+        body { background-color: var(--dark); color: #ffffff; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .accent-gold { color: var(--gold); }
+        .bg-gold { background-color: var(--gold); }
+        
+        /* Cinematic Hero Overlay */
+        .hero-bg {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.5), var(--dark)), url('hadder1.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Luxury Hover Effects */
+        .gallery-item { overflow: hidden; position: relative; }
+        .gallery-item img { transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1); filter: grayscale(20%); }
+        .gallery-item:hover img { transform: scale(1.1); filter: grayscale(0%); }
+        
+        .nav-link { letter-spacing: 0.2em; font-size: 0.7rem; transition: color 0.3s; }
+        .nav-link:hover { color: var(--gold); }
+    </style>
+</head>
+<body>
+
+    <nav class="flex justify-between items-center px-10 py-8 fixed w-full z-50 bg-gradient-to-b from-black/90 to-transparent">
+        <div class="hidden md:flex gap-8">
+            <a href="#" class="nav-link uppercase">Collection</a>
+            <a href="#" class="nav-link uppercase">Process</a>
+        </div>
+        
+        <div class="text-xl md:text-2xl font-serif tracking-[0.4em] font-semibold text-center uppercase">
+            MZ Wood Works
+        </div>
+
+        <div class="flex items-center gap-8">
+            <a href="#" class="nav-link uppercase hidden md:block">Contact</a>
+            <div class="space-y-1.5 cursor-pointer group">
+                <div class="w-8 h-0.5 bg-white group-hover:bg-gold transition-colors"></div>
+                <div class="w-8 h-0.5 bg-white group-hover:bg-gold transition-colors"></div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-bg h-screen flex flex-col justify-center items-center text-center px-6">
+        <span data-aos="fade-down" class="text-[10px] uppercase tracking-[0.5em] accent-gold mb-8 font-medium">Est. 2026 | Master Craftsmanship</span>
+        <h1 data-aos="fade-up" data-aos-delay="200" class="text-6xl md:text-9xl font-serif leading-tight mb-8">
+            Furniture that<br><span class="italic font-normal">outlasts trends.</span>
+        </h1>
+        <p data-aos="fade-up" data-aos-delay="400" class="text-gray-400 text-sm md:text-lg max-w-xl leading-relaxed mb-12 font-light">
+            Hand-built bespoke kitchens, wardrobes, and media walls. Designed with precision, crafted with soul in our private atelier.
+        </p>
+        <div data-aos="zoom-in" data-aos-delay="600" class="flex flex-col md:flex-row gap-6 w-full max-w-md">
+            <button class="flex-1 bg-gold text-black font-semibold py-5 uppercase text-[10px] tracking-[0.3em] hover:brightness-110 transition-all">
+                Book Consultation
+            </button>
+            <button class="flex-1 border border-white/20 text-white py-5 uppercase text-[10px] tracking-[0.3em] hover:bg-white/5 transition-all">
+                The Portfolio
+            </button>
+        </div>
+    </header>
+
+    <section class="py-32 px-6 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div data-aos="fade-up" class="space-y-6">
+                <div class="aspect-[3/4] overflow-hidden">
+                    <img src="kitchen.jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000">
+                </div>
+                <h3 class="text-2xl font-serif italic">Bespoke Kitchens</h3>
+                <p class="text-gray-500 text-sm leading-relaxed">Modern culinary sanctuaries tailored to your workflow and aesthetic.</p>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="200" class="space-y-6 md:mt-20">
+                <div class="aspect-[3/4] overflow-hidden">
+                    <img src="wardrobe.jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000">
+                </div>
+                <h3 class="text-2xl font-serif italic">Luxury Wardrobes</h3>
+                <p class="text-gray-500 text-sm leading-relaxed">Storage solutions that blend architectural form with effortless function.</p>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="400" class="space-y-6">
+                <div class="aspect-[3/4] overflow-hidden">
+                    <img src="media-wall.jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000">
+                </div>
+                <h3 class="text-2xl font-serif italic">Media Walls</h3>
+                <p class="text-gray-500 text-sm leading-relaxed">Integrated focal points designed to house technology with elegance.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-[#050505] border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+                <div>
+                    <span class="accent-gold uppercase text-[10px] tracking-[0.4em] mb-4 block">The Workshop</span>
+                    <h2 class="text-4xl md:text-6xl font-serif">Precision in Every Cut</h2>
+                </div>
+                <p class="text-gray-500 max-w-xs text-sm font-light italic">"Every joint is hand-inspected, every surface hand-finished."</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="gallery-item h-64 md:h-80" data-aos="reveal-up"><img src="1000457597.png" class="w-full h-full object-cover"></div>
+                <div class="gallery-item h-64 md:h-80" data-aos="reveal-up" data-aos-delay="100"><img src="1000457598.png" class="w-full h-full object-cover"></div>
+                <div class="gallery-item h-64 md:h-80" data-aos="reveal-up" data-aos-delay="200"><img src="1000457599.png" class="w-full h-full object-cover"></div>
+                <div class="gallery-item h-64 md:h-80" data-aos="reveal-up"><img src="1000457600.png" class="w-full h-full object-cover"></div>
+                <div class="gallery-item h-64 md:h-80" data-aos="reveal-up" data-aos-delay="100"><img src="1000457601.png" class="w-full h-full object-cover"></div>
+                <div class="gallery-item h-64 md:h-80" data-aos="reveal-up" data-aos-delay="200"><img src="1000457602.png" class="w-full h-full object-cover"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-20 px-6 text-center">
+        <div class="w-12 h-px bg-gold mx-auto mb-10"></div>
+        <div class="text-lg font-serif tracking-widest uppercase mb-4">MZ Wood Works</div>
+        <p class="text-[10px] tracking-[0.3em] text-gray-600 uppercase">&copy; 2026 Atelier Portfolio. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            easing: 'ease-out-quad'
+        });
+    </script>
+</body>
+          </html>
+          
