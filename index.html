@@ -14,50 +14,34 @@
         .bg-gold { background-color: #c2a47e; }
         .letter-spacing-custom { letter-spacing: 0.4em; }
         
-        /* Hero Section with exact image positioning */
         .hero-bg {
-            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(10,10,10,1)), url('hadder1.jpg');
+            background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(10,10,10,1)), url('hadder1.jpg');
             background-size: cover;
             background-position: center;
         }
-
-        /* Custom tracking for the logo */
-        .logo-tracking { letter-spacing: 0.25em; }
     </style>
 </head>
 <body>
 
-    <nav class="flex justify-between items-center px-8 py-8 fixed w-full z-50">
-        <div class="w-10 hidden md:block"></div> 
-        
-        <div class="text-lg md:text-xl font-medium logo-tracking font-serif text-center">
-            MZ WOOD WORKS
-        </div>
-
-        <div class="flex flex-col gap-1.5 cursor-pointer group">
-            <div class="w-8 h-px bg-white transition-all group-hover:bg-[#c2a47e]"></div>
-            <div class="w-8 h-px bg-white transition-all group-hover:bg-[#c2a47e]"></div>
+    <nav class="flex justify-between items-center p-6 fixed w-full z-50 bg-gradient-to-b from-black/70 to-transparent">
+        <div class="text-xl font-medium tracking-widest font-serif">MZ WOOD WORKS</div>
+        <div class="space-y-1.5 cursor-pointer">
+            <div class="w-7 h-0.5 bg-white"></div>
+            <div class="w-7 h-0.5 bg-white"></div>
         </div>
     </nav>
 
     <header class="hero-bg h-screen flex flex-col justify-center items-center text-center px-6">
-        <span data-aos="fade-down" data-aos-duration="1000" class="text-[10px] uppercase letter-spacing-custom accent-gold mb-10 font-medium">
-            MASTER CRAFTSMANSHIP
-        </span>
-        
-        <h1 data-aos="fade-up" data-aos-duration="1200" class="text-5xl md:text-8xl font-serif leading-[1.1] mb-10">
-            Furniture that<br>outlasts trends.
-        </h1>
-        
-        <p data-aos="fade-up" data-aos-duration="1400" class="text-gray-300 text-sm md:text-lg max-w-xl leading-relaxed mb-14 font-light">
+        <span data-aos="fade-down" data-aos-duration="1000" class="text-[10px] uppercase letter-spacing-custom accent-gold mb-8 font-medium">MASTER CRAFTSMANSHIP</span>
+        <h1 data-aos="fade-up" data-aos-duration="1200" class="text-5xl md:text-8xl font-serif leading-tight mb-8">Furniture that<br>outlasts trends.</h1>
+        <p data-aos="fade-up" data-aos-duration="1400" class="text-gray-300 text-sm md:text-lg max-w-xl leading-relaxed mb-12 font-light">
             Hand-built bespoke kitchens, wardrobes, and media walls. Designed with precision, crafted with soul.
         </p>
-        
         <div data-aos="zoom-in" data-aos-duration="1500" class="flex flex-col gap-4 w-full max-w-xs">
-            <button class="bg-[#c2a47e] text-black font-semibold py-4 uppercase text-[11px] tracking-[0.3em] transition-all hover:bg-[#b1936d]">
+            <button class="bg-gold text-black font-medium py-4 uppercase text-[11px] tracking-[0.2em] transition-all hover:brightness-110">
                 Book a Consultation
             </button>
-            <button class="border border-white/20 text-white py-4 uppercase text-[11px] tracking-[0.3em] transition-all hover:bg-white/5">
+            <button class="border border-white/20 text-white py-4 uppercase text-[11px] tracking-[0.2em] transition-all hover:bg-white/5">
                 View Our Work
             </button>
         </div>
@@ -69,7 +53,7 @@
             <div class="w-20 h-px bg-gold mx-auto"></div>
         </div>
 
-        <div class="mb-20" data-aos="fade-right">
+        <div class="mb-20" data-aos="fade-right" data-aos-duration="1000">
             <img src="kitchen.jpg" alt="Bespoke Kitchen" class="w-full h-[500px] object-cover mb-10">
             <div>
                 <h3 class="text-3xl font-serif mb-4">Bespoke Kitchens</h3>
@@ -82,7 +66,7 @@
             </div>
         </div>
 
-        <div class="mb-20" data-aos="fade-left">
+        <div class="mb-20" data-aos="fade-left" data-aos-duration="1000">
             <img src="wardrobe.jpg" alt="Luxury Wardrobes" class="w-full h-[500px] object-cover mb-10">
             <div>
                 <h3 class="text-3xl font-serif mb-4">Luxury Wardrobes</h3>
@@ -95,7 +79,7 @@
             </div>
         </div>
 
-        <div class="mb-20" data-aos="fade-right">
+        <div class="mb-20" data-aos="fade-right" data-aos-duration="1000">
             <img src="media-wall.jpg" alt="Media Walls" class="w-full h-[500px] object-cover mb-10">
             <div>
                 <h3 class="text-3xl font-serif mb-4">Media Walls</h3>
@@ -168,9 +152,9 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
-            once: true,
-            duration: 800,
-            offset: 100
+            once: true, // Animation sirf ek baar hogi jab scroll karenge
+            duration: 800, // Animation ki speed
+            offset: 100 // Kitni der pehle animation shuru ho
         });
     </script>
 </body>
