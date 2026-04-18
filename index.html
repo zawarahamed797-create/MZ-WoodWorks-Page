@@ -1,154 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MZ Wood Works | Bespoke Furniture Atelier</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-    <style>
-        body { background-color: #0a0a0a; color: #ffffff; font-family: 'Inter', sans-serif; overflow-x: hidden; }
-        .font-serif { font-family: 'Playfair Display', serif; }
-        .accent-gold { color: #c2a47e; }
-        .bg-gold { background-color: #c2a47e; }
-        .letter-spacing-custom { letter-spacing: 0.4em; }
-        
-        .hero-bg {
-            background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(10,10,10,1)), url('hadder1.jpg');
-            background-size: cover;
-            background-position: center;
-        }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>MZ Wood Works | Luxury Furniture Studio</title>
 
-        /* Gallery Image Effects */
-        .gallery-container img {
-            transition: all 0.6s ease-in-out;
-            filter: grayscale(30%);
-        }
-        .gallery-container img:hover {
-            filter: grayscale(0%);
-            transform: scale(1.03);
-        }
-    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<style>
+  html { scroll-behavior: smooth; }
+  body {
+    background: #0b0f19;
+    color: white;
+  }
+  .glass {
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(12px);
+  }
+</style>
 </head>
+
 <body>
 
-    <nav class="flex justify-between items-center p-6 fixed w-full z-50 bg-gradient-to-b from-black/70 to-transparent">
-        <div class="text-xl font-medium tracking-widest font-serif">MZ WOOD WORKS</div>
-        <div class="space-y-1.5 cursor-pointer">
-            <div class="w-7 h-0.5 bg-white"></div>
-            <div class="w-7 h-0.5 bg-white"></div>
-        </div>
+<!-- TOP BAR -->
+<div class="bg-black text-center py-2 text-sm text-gray-300">
+  Premium Custom Furniture • Kitchen • Wardrobe • Interior Design
+</div>
+
+<!-- NAVBAR -->
+<header class="fixed w-full top-0 z-50 glass border-b border-white/10">
+  <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
+
+    <h1 class="text-xl font-bold text-amber-400">MZ Wood Works</h1>
+
+    <nav class="hidden md:flex space-x-6 text-gray-200">
+      <a href="#home" class="hover:text-amber-400">Home</a>
+      <a href="#services" class="hover:text-amber-400">Services</a>
+      <a href="#work" class="hover:text-amber-400">Work</a>
+      <a href="#about" class="hover:text-amber-400">About</a>
+      <a href="#contact" class="hover:text-amber-400">Contact</a>
     </nav>
 
-    <header class="hero-bg h-screen flex flex-col justify-center items-center text-center px-6">
-        <span data-aos="fade-down" data-aos-duration="1000" class="text-[10px] uppercase letter-spacing-custom accent-gold mb-8 font-medium">MASTER CRAFTSMANSHIP</span>
-        <h1 data-aos="fade-up" data-aos-duration="1200" class="text-5xl md:text-8xl font-serif leading-tight mb-8">Furniture that<br>outlasts trends.</h1>
-        <p data-aos="fade-up" data-aos-duration="1400" class="text-gray-300 text-sm md:text-lg max-w-xl leading-relaxed mb-12 font-light">
-            Hand-built bespoke kitchens, wardrobes, and media walls. Designed with precision, crafted with soul.
-        </p>
-        <div data-aos="zoom-in" data-aos-duration="1500" class="flex flex-col gap-4 w-full max-w-xs">
-            <button class="bg-gold text-black font-medium py-4 uppercase text-[11px] tracking-[0.2em] transition-all hover:brightness-110">
-                Book a Consultation
-            </button>
-            <button class="border border-white/20 text-white py-4 uppercase text-[11px] tracking-[0.2em] transition-all hover:bg-white/5">
-                View Our Work
-            </button>
-        </div>
-    </header>
+    <a href="https://wa.me/923187196942"
+       class="bg-green-500 px-4 py-2 rounded-full text-sm font-bold">
+      WhatsApp
+    </a>
 
-    <section class="py-24 px-6 max-w-5xl mx-auto">
-        <div class="text-center mb-20" data-aos="fade-up">
-            <h2 class="text-4xl md:text-6xl font-serif mb-6">Our Expertise</h2>
-            <div class="w-20 h-px bg-gold mx-auto"></div>
-        </div>
+  </div>
+</header>
 
-        <div class="mb-20" data-aos="fade-right">
-            <img src="kitchen.jpg" alt="Bespoke Kitchen" class="w-full h-[500px] object-cover mb-10 shadow-2xl">
-            <div>
-                <h3 class="text-3xl font-serif mb-4">Bespoke Kitchens</h3>
-                <p class="text-gray-400 leading-relaxed mb-6 font-light">
-                    The heart of the home, crafted without compromise. From timeless shakers to minimalist modern spaces.
-                </p>
-                <a href="#" class="accent-gold uppercase text-xs tracking-widest flex items-center gap-2 font-medium">
-                    EXPLORE <span class="text-lg">→</span>
-                </a>
-            </div>
-        </div>
+<!-- HERO -->
+<section id="home" class="pt-32 pb-24 text-center bg-gradient-to-b from-black via-gray-900 to-black">
 
-        <div class="mb-20" data-aos="fade-left">
-            <img src="wardrobe.jpg" alt="Luxury Wardrobes" class="w-full h-[500px] object-cover mb-10 shadow-2xl">
-            <div>
-                <h3 class="text-3xl font-serif mb-4">Luxury Wardrobes</h3>
-                <p class="text-gray-400 leading-relaxed mb-6 font-light">
-                    Walk-in and sliding systems designed around your life. Impeccable finishes, integrated lighting.
-                </p>
-                <a href="#" class="accent-gold uppercase text-xs tracking-widest flex items-center gap-2 font-medium">
-                    EXPLORE <span class="text-lg">→</span>
-                </a>
-            </div>
-        </div>
-    </section>
+  <h2 class="text-4xl md:text-6xl font-extrabold" data-aos="fade-up">
+    Luxury Furniture <span class="text-amber-400">Crafted for You</span>
+  </h2>
 
-    <section class="py-24 px-8 bg-[#050505] border-t border-white/5">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <span class="text-[10px] accent-gold letter-spacing-custom block mb-4 uppercase">Visual Journey</span>
-                <h2 data-aos="fade-up" class="text-4xl md:text-6xl font-serif mb-10">Craftsmanship in Detail</h2>
-            </div>
+  <p class="mt-4 text-gray-300 max-w-xl mx-auto" data-aos="fade-up">
+    We design and build premium kitchens, wardrobes, TV walls, and full home interiors with perfection and modern craftsmanship.
+  </p>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 gallery-container">
-                <div class="overflow-hidden bg-zinc-900 rounded-sm" data-aos="fade-up" data-aos-delay="100">
-                    <img src="1000457597.png" class="w-full h-80 object-cover" alt="Detail 1">
-                </div>
-                <div class="overflow-hidden bg-zinc-900 rounded-sm" data-aos="fade-up" data-aos-delay="200">
-                    <img src="1000457598.png" class="w-full h-80 object-cover" alt="Detail 2">
-                </div>
-                <div class="overflow-hidden bg-zinc-900 rounded-sm" data-aos="fade-up" data-aos-delay="300">
-                    <img src="1000457599.png" class="w-full h-80 object-cover" alt="Detail 3">
-                </div>
-                <div class="overflow-hidden bg-zinc-900 rounded-sm" data-aos="fade-up" data-aos-delay="100">
-                    <img src="1000457600.png" class="w-full h-80 object-cover" alt="Detail 4">
-                </div>
-                <div class="overflow-hidden bg-zinc-900 rounded-sm" data-aos="fade-up" data-aos-delay="200">
-                    <img src="1000457601.png" class="w-full h-80 object-cover" alt="Detail 5">
-                </div>
-                <div class="overflow-hidden bg-zinc-900 rounded-sm" data-aos="fade-up" data-aos-delay="300">
-                    <img src="1000457602.png" class="w-full h-80 object-cover" alt="Detail 6">
-                </div>
-            </div>
+  <div class="mt-8 flex justify-center gap-4" data-aos="fade-up">
+    <a href="#contact" class="bg-amber-500 px-6 py-3 rounded-full font-bold">
+      Get Free Quote
+    </a>
+    <a href="#work" class="border border-white/30 px-6 py-3 rounded-full">
+      View Portfolio
+    </a>
+  </div>
 
-            <div class="mt-32 max-w-4xl mx-auto">
-                <h2 data-aos="fade-up" class="text-5xl md:text-7xl font-serif mb-10 leading-tight">An atelier, not a store.</h2>
-                <p data-aos="fade-up" class="text-gray-400 text-lg md:text-xl leading-relaxed mb-16 font-light">
-                    Every piece is drafted specifically for your space. We work with discerning homeowners who demand perfection.
-                </p>
+</section>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                    <div class="border-l border-gold/30 pl-6" data-aos="fade-right">
-                        <h4 class="font-medium mb-1 accent-gold uppercase text-xs tracking-widest">The Draft</h4>
-                        <p class="text-gray-400 text-sm font-light mt-2">Precise 3D visualization before we touch the timber.</p>
-                    </div>
-                    <div class="border-l border-gold/30 pl-6" data-aos="fade-right" data-aos-delay="200">
-                        <h4 class="font-medium mb-1 accent-gold uppercase text-xs tracking-widest">The Finish</h4>
-                        <p class="text-gray-400 text-sm font-light mt-2">Hand-inspected joints and surfaces for a lifetime of use.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- FEATURES -->
+<section class="max-w-6xl mx-auto py-16 grid md:grid-cols-3 gap-6 px-4">
 
-    <footer class="p-12 text-center border-t border-white/5 bg-black">
-        <p class="text-[10px] tracking-[0.3em] text-gray-600 uppercase">&copy; 2026 MZ WOOD WORKS</p>
-    </footer>
+  <div class="glass p-6 rounded-2xl" data-aos="fade-up">
+    <h3 class="text-xl font-bold text-amber-400">Premium Quality</h3>
+    <p class="text-gray-300 mt-2">High-end materials and modern finishing.</p>
+  </div>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            once: true,
-            duration: 1000,
-            offset: 100
-        });
-    </script>
+  <div class="glass p-6 rounded-2xl" data-aos="fade-up">
+    <h3 class="text-xl font-bold text-amber-400">Custom Design</h3>
+    <p class="text-gray-300 mt-2">Built exactly according to your space.</p>
+  </div>
+
+  <div class="glass p-6 rounded-2xl" data-aos="fade-up">
+    <h3 class="text-xl font-bold text-amber-400">Fast Delivery</h3>
+    <p class="text-gray-300 mt-2">On-time project completion guaranteed.</p>
+  </div>
+
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="py-20 bg-black">
+
+  <h2 class="text-3xl font-bold text-center mb-12">Our Services</h2>
+
+  <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-6 px-4">
+
+    <div class="glass p-6 rounded-2xl hover:scale-105 transition">
+      <h3 class="text-xl font-bold text-amber-400">Kitchen Design</h3>
+      <p class="text-gray-300 mt-2">Modern luxury kitchens with smart storage.</p>
+    </div>
+
+    <div class="glass p-6 rounded-2xl hover:scale-105 transition">
+      <h3 class="text-xl font-bold text-amber-400">Wardrobes</h3>
+      <p class="text-gray-300 mt-2">Sliding & luxury built-in wardrobes.</p>
+    </div>
+
+    <div class="glass p-6 rounded-2xl hover:scale-105 transition">
+      <h3 class="text-xl font-bold text-amber-400">TV Walls</h3>
+      <p class="text-gray-300 mt-2">Elegant media walls for modern homes.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- PORTFOLIO -->
+<section id="work" class="py-20">
+
+  <h2 class="text-3xl font-bold text-center mb-10">Our Work</h2>
+
+  <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-4 px-4">
+
+    <img class="rounded-2xl hover:scale-105 transition" src="https://images.unsplash.com/photo-1554995207-c18c203602cb"/>
+    <img class="rounded-2xl hover:scale-105 transition" src="https://images.unsplash.com/photo-1616627981781-4d7c1c2d3f2c"/>
+    <img class="rounded-2xl hover:scale-105 transition" src="https://images.unsplash.com/photo-1560448204-603b3fc33ddc"/>
+
+    <img class="rounded-2xl hover:scale-105 transition" src="https://images.unsplash.com/photo-1598300056393-4a9e0b3f3d5a"/>
+    <img class="rounded-2xl hover:scale-105 transition" src="https://images.unsplash.com/photo-1615874959474-d609969a20ed"/>
+    <img class="rounded-2xl hover:scale-105 transition" src="https://images.unsplash.com/photo-1582582494700-4a5a0c7a3b2f"/>
+
+  </div>
+
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-20 bg-black text-center px-4">
+
+  <h2 class="text-3xl font-bold">About MZ Wood Works</h2>
+
+  <p class="mt-4 text-gray-300 max-w-2xl mx-auto">
+    We are a premium carpentry brand specializing in luxury interiors.
+    Every project is crafted with precision, modern tools, and artistic design.
+  </p>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-20 px-4">
+
+  <div class="max-w-2xl mx-auto glass p-8 rounded-2xl">
+
+    <h2 class="text-3xl font-bold text-center mb-6">Get Free Quote</h2>
+
+    <input class="w-full p-3 mb-3 rounded bg-white/10" placeholder="Your Name"/>
+    <input class="w-full p-3 mb-3 rounded bg-white/10" placeholder="Phone Number"/>
+    <textarea class="w-full p-3 mb-3 rounded bg-white/10" placeholder="Project Details"></textarea>
+
+    <button class="w-full bg-amber-500 py-3 rounded font-bold">
+      Send Request
+    </button>
+
+    <p class="text-center mt-4 text-gray-400">Or WhatsApp: 0318-7196942</p>
+
+  </div>
+
+</section>
+
+<!-- FLOAT WHATSAPP -->
+<a href="https://wa.me/923187196942"
+   class="fixed bottom-6 right-6 bg-green-500 p-4 rounded-full shadow-lg text-xl">
+💬
+</a>
+
+<!-- FOOTER -->
+<footer class="text-center py-6 text-gray-400 border-t border-white/10">
+  © 2026 MZ Wood Works — Premium Furniture Studio
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
 </body>
 </html>
