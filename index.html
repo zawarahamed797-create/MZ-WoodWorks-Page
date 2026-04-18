@@ -3,100 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MZ Wood Works | Premium Custom Furniture</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #0f0f0f; color: #ffffff; }
-        .heading-font { font-family: 'Playfair Display', serif; }
-        .hero-gradient { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1556020685-ae41abfc9365?q=80&w=2000') center/cover; }
-        .card-hover:hover { transform: translateY(-10px); transition: all 0.3s ease; border-color: #d4af37; }
-        .accent-color { color: #d4af37; }
-        .accent-bg { background-color: #d4af37; }
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('hadder1.jpg'); /* Aapki file ka naam */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+        }
+        .font-playfair { font-family: 'Playfair Display', serif; }
+        .font-inter { font-family: 'Inter', sans-serif; }
+        .letter-spacing-wide { letter-spacing: 0.3em; }
     </style>
 </head>
-<body>
+<body class="bg-black text-white font-inter">
 
-    <nav class="flex justify-between items-center p-6 bg-black/50 backdrop-blur-md fixed w-full z-50 border-b border-white/10">
-        <div class="text-2xl font-bold heading-font accent-color">MZ WOOD WORKS</div>
-        <div class="hidden md:flex space-x-8 text-sm uppercase tracking-widest">
-            <a href="#home" class="hover:text-[#d4af37]">Home</a>
-            <a href="#services" class="hover:text-[#d4af37]">Services</a>
-            <a href="#catalog" class="hover:text-[#d4af37]">Catalog</a>
-            <a href="#contact" class="hover:text-[#d4af37]">Contact</a>
-        </div>
-    </nav>
-
-    <section id="home" class="h-screen flex items-center justify-center text-center hero-gradient px-4">
-        <div>
-            <h1 class="text-5xl md:text-7xl heading-font mb-4">Custom Precision.<br>Lasting Quality.</h1>
-            <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto">Expertly crafted kitchens, wardrobes, and media walls designed for modern luxury living.</p>
-            <a href="#contact" class="accent-bg text-black px-8 py-4 font-bold uppercase tracking-tighter hover:bg-yellow-600 transition">Request a Custom Quote</a>
-        </div>
-    </section>
-
-    <section id="services" class="py-20 px-8 max-w-7xl mx-auto">
-        <h2 class="text-3xl heading-font accent-color mb-12 text-center">Our Expertise</h2>
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="p-8 border border-white/10 card-hover bg-zinc-900/50">
-                <h3 class="text-xl font-bold mb-4">Modern Kitchens</h3>
-                <p class="text-gray-400">Bespoke culinary spaces blending functionality with high-end aesthetics.</p>
+    <header class="hero-section flex flex-col">
+        <nav class="flex justify-between items-center p-6 md:px-12">
+            <div class="text-xl md:text-2xl font-semibold tracking-wider font-playfair">MZ WOOD WORKS</div>
+            <div class="space-y-1.5 cursor-pointer">
+                <div class="w-6 h-0.5 bg-white"></div>
+                <div class="w-6 h-0.5 bg-white"></div>
             </div>
-            <div class="p-8 border border-white/10 card-hover bg-zinc-900/50">
-                <h3 class="text-xl font-bold mb-4">Luxury Wardrobes</h3>
-                <p class="text-gray-400">Custom sliding and walk-in systems tailored to your lifestyle and space.</p>
-            </div>
-            <div class="p-8 border border-white/10 card-hover bg-zinc-900/50">
-                <h3 class="text-xl font-bold mb-4">Media Walls</h3>
-                <p class="text-gray-400">Sophisticated entertainment units designed to be the centerpiece of your home.</p>
+        </nav>
+
+        <div class="flex-grow flex flex-col justify-center items-center text-center px-6">
+            <span class="text-[10px] md:text-xs uppercase letter-spacing-wide text-amber-200/70 mb-6 font-medium">
+                MASTER CRAFTSMANSHIP
+            </span>
+            
+            <h1 class="text-5xl md:text-7xl font-playfair leading-tight mb-8 max-w-4xl">
+                Furniture that outlasts trends.
+            </h1>
+            
+            <p class="text-gray-300 text-sm md:text-lg max-w-xl leading-relaxed mb-12 font-light">
+                Hand-built bespoke kitchens, wardrobes, and media walls. 
+                Designed with precision, crafted with soul.
+            </p>
+
+            <div class="flex flex-col gap-4 w-full max-w-xs">
+                <button class="bg-[#c2a47e] hover:bg-[#b3936a] text-black font-semibold py-4 px-8 uppercase text-xs tracking-widest transition-all">
+                    Book a Consultation
+                </button>
+                <button class="border border-white/30 hover:bg-white/10 text-white py-4 px-8 uppercase text-xs tracking-widest transition-all">
+                    View Our Work
+                </button>
             </div>
         </div>
-    </section>
-
-    <section id="catalog" class="py-20 bg-zinc-950 px-8">
-        <div class="max-w-7xl mx-auto text-center mb-12">
-            <h2 class="text-3xl heading-font accent-color mb-4">Design Catalog</h2>
-            <p class="text-gray-400">Explore our latest 3D renders and completed projects.</p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-7xl mx-auto">
-            <div class="aspect-square bg-zinc-800 border border-white/5 overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=800" alt="Kitchen" class="object-cover w-full h-full opacity-80 hover:opacity-100 transition">
-            </div>
-            <div class="aspect-square bg-zinc-800 border border-white/5 overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?q=80&w=800" alt="Wardrobe" class="object-cover w-full h-full opacity-80 hover:opacity-100 transition">
-            </div>
-            <div class="aspect-square bg-zinc-800 border border-white/5 overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=800" alt="Media Wall" class="object-cover w-full h-full opacity-80 hover:opacity-100 transition">
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="py-20 px-8 max-w-3xl mx-auto">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl heading-font accent-color mb-4">Start Your Project</h2>
-            <p class="text-gray-400">Fill out the form below for a professional consultation.</p>
-        </div>
-        <form class="space-y-6">
-            <div class="grid md:grid-cols-2 gap-6">
-                <input type="text" placeholder="Full Name" class="w-full bg-zinc-900 border border-white/10 p-4 focus:border-[#d4af37] outline-none">
-                <input type="email" placeholder="Email Address" class="w-full bg-zinc-900 border border-white/10 p-4 focus:border-[#d4af37] outline-none">
-            </div>
-            <select class="w-full bg-zinc-900 border border-white/10 p-4 focus:border-[#d4af37] outline-none text-gray-400">
-                <option>Select Project Type</option>
-                <option>Custom Kitchen</option>
-                <option>Wardrobe System</option>
-                <option>Media Wall</option>
-                <option>Other</option>
-            </select>
-            <textarea rows="5" placeholder="Project Dimensions / Requirements" class="w-full bg-zinc-900 border border-white/10 p-4 focus:border-[#d4af37] outline-none"></textarea>
-            <button type="submit" class="w-full accent-bg text-black font-bold py-4 uppercase tracking-widest hover:bg-yellow-600 transition">Submit Inquiry</button>
-        </form>
-    </section>
-
-    <footer class="py-10 border-t border-white/10 text-center text-gray-500 text-sm">
-        <p>&copy; 2026 MZ Wood Works. All Rights Reserved.</p>
-        <p class="mt-2 tracking-widest">DESIGNED FOR EXCELLENCE</p>
-    </footer>
+    </header>
 
 </body>
 </html>
