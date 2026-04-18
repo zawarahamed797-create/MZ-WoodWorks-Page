@@ -20,9 +20,15 @@
             background-position: center;
         }
 
-        /* Gallery Hover Effect */
-        .gallery-card img { transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1); }
-        .gallery-card:hover img { transform: scale(1.05); }
+        /* Gallery Image Effects */
+        .gallery-container img {
+            transition: all 0.6s ease-in-out;
+            filter: grayscale(30%);
+        }
+        .gallery-container img:hover {
+            filter: grayscale(0%);
+            transform: scale(1.03);
+        }
     </style>
 </head>
 <body>
@@ -57,8 +63,8 @@
             <div class="w-20 h-px bg-gold mx-auto"></div>
         </div>
 
-        <div class="mb-20" data-aos="fade-right" data-aos-duration="1000">
-            <img src="kitchen.jpg" alt="Bespoke Kitchen" class="w-full h-[500px] object-cover mb-10">
+        <div class="mb-20" data-aos="fade-right">
+            <img src="kitchen.jpg" alt="Bespoke Kitchen" class="w-full h-[500px] object-cover mb-10 shadow-2xl">
             <div>
                 <h3 class="text-3xl font-serif mb-4">Bespoke Kitchens</h3>
                 <p class="text-gray-400 leading-relaxed mb-6 font-light">
@@ -70,8 +76,8 @@
             </div>
         </div>
 
-        <div class="mb-20" data-aos="fade-left" data-aos-duration="1000">
-            <img src="wardrobe.jpg" alt="Luxury Wardrobes" class="w-full h-[500px] object-cover mb-10">
+        <div class="mb-20" data-aos="fade-left">
+            <img src="wardrobe.jpg" alt="Luxury Wardrobes" class="w-full h-[500px] object-cover mb-10 shadow-2xl">
             <div>
                 <h3 class="text-3xl font-serif mb-4">Luxury Wardrobes</h3>
                 <p class="text-gray-400 leading-relaxed mb-6 font-light">
@@ -82,89 +88,51 @@
                 </a>
             </div>
         </div>
-
-        <div class="mb-20" data-aos="fade-right" data-aos-duration="1000">
-            <img src="media-wall.jpg" alt="Media Walls" class="w-full h-[500px] object-cover mb-10">
-            <div>
-                <h3 class="text-3xl font-serif mb-4">Media Walls</h3>
-                <p class="text-gray-400 leading-relaxed mb-6 font-light">
-                    Architectural focal points that hide the clutter and elevate the space. Custom acoustics and storage.
-                </p>
-                <a href="#" class="accent-gold uppercase text-xs tracking-widest flex items-center gap-2 font-medium">
-                    EXPLORE <span class="text-lg">→</span>
-                </a>
-            </div>
-        </div>
     </section>
 
     <section class="py-24 px-8 bg-[#050505] border-t border-white/5">
-        <div class="max-w-4xl mx-auto">
-            <h2 data-aos="fade-up" class="text-5xl md:text-7xl font-serif mb-10 leading-tight">Not a furniture store.<br>An atelier.</h2>
-            <p data-aos="fade-up" class="text-gray-400 text-lg md:text-xl leading-relaxed mb-16 font-light">
-                We don't pull boxes from a warehouse. Every piece is drafted, modeled, cut, and finished specifically for your space. We work with discerning homeowners and interior designers who demand perfection.
-            </p>
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-[10px] accent-gold letter-spacing-custom block mb-4 uppercase">Visual Journey</span>
+                <h2 data-aos="fade-up" class="text-4xl md:text-6xl font-serif mb-10">Craftsmanship in Detail</h2>
+            </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-12 mb-20">
-                <div class="flex items-start gap-4" data-aos="zoom-in" data-aos-delay="100">
-                    <span class="accent-gold text-xl">✓</span>
-                    <div>
-                        <h4 class="font-medium mb-1">3D Visualization</h4>
-                        <p class="text-gray-400 text-sm font-light leading-relaxed">Detailed architectural renders before any cut is made, ensuring total alignment with your vision.</p>
-                    </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 gallery-container">
+                <div class="overflow-hidden bg-zinc-900 rounded-sm" data-aos="fade-up" data-aos-delay="100">
+                    <img src="1000457597.png" class="w-full h-80 object-cover" alt="Detail 1">
                 </div>
-                <div class="flex items-start gap-4" data-aos="zoom-in" data-aos-delay="200">
-                    <span class="accent-gold text-xl">✓</span>
-                    <div>
-                        <h4 class="font-medium mb-1">Material Excellence</h4>
-                        <p class="text-gray-400 text-sm font-light leading-relaxed">We source only the finest sustainable timbers, premium veneers, and high-end hardware.</p>
-                    </div>
+                <div class="overflow-hidden bg-zinc-900 rounded-sm" data-aos="fade-up" data-aos-delay="200">
+                    <img src="1000457598.png" class="w-full h-80 object-cover" alt="Detail 2">
                 </div>
-                <div class="flex items-start gap-4" data-aos="zoom-in" data-aos-delay="300">
-                    <span class="accent-gold text-xl">✓</span>
-                    <div>
-                        <h4 class="font-medium mb-1">Specialist Installation</h4>
-                        <p class="text-gray-400 text-sm font-light leading-relaxed">Our in-house team handles the entire process from workshop floor to final fitting in your home.</p>
-                    </div>
+                <div class="overflow-hidden bg-zinc-900 rounded-sm" data-aos="fade-up" data-aos-delay="300">
+                    <img src="1000457599.png" class="w-full h-80 object-cover" alt="Detail 3">
                 </div>
-                <div class="flex items-start gap-4" data-aos="zoom-in" data-aos-delay="400">
-                    <span class="accent-gold text-xl">✓</span>
-                    <div>
-                        <h4 class="font-medium mb-1">Lifetime Guarantee</h4>
-                        <p class="text-gray-400 text-sm font-light leading-relaxed">Our craftsmanship is built to last generations, backed by a lifetime guarantee on all joinery.</p>
-                    </div>
+                <div class="overflow-hidden bg-zinc-900 rounded-sm" data-aos="fade-up" data-aos-delay="100">
+                    <img src="1000457600.png" class="w-full h-80 object-cover" alt="Detail 4">
+                </div>
+                <div class="overflow-hidden bg-zinc-900 rounded-sm" data-aos="fade-up" data-aos-delay="200">
+                    <img src="1000457601.png" class="w-full h-80 object-cover" alt="Detail 5">
+                </div>
+                <div class="overflow-hidden bg-zinc-900 rounded-sm" data-aos="fade-up" data-aos-delay="300">
+                    <img src="1000457602.png" class="w-full h-80 object-cover" alt="Detail 6">
                 </div>
             </div>
 
-            <div class="border-l border-gold/30 pl-8 space-y-12 mb-24">
-                <div data-aos="fade-left">
-                    <span class="text-[10px] accent-gold letter-spacing-custom block mb-4 uppercase">The Process</span>
-                    <h3 class="text-2xl font-serif mb-4 italic">Drafted with precision.</h3>
-                    <p class="text-gray-400 font-light leading-relaxed">From the initial hand-sketch to the final 3D model, our design process is rigorous. We consider every millimeter to ensure your custom furniture fits your lifestyle perfectly.</p>
-                </div>
-                <div data-aos="fade-left">
-                    <h3 class="text-2xl font-serif mb-4 italic">Crafted with soul.</h3>
-                    <p class="text-gray-400 font-light leading-relaxed">Technology meets tradition. While we use advanced machinery for precision, every joint is hand-inspected and every surface hand-finished by master craftsmen.</p>
-                </div>
-            </div>
+            <div class="mt-32 max-w-4xl mx-auto">
+                <h2 data-aos="fade-up" class="text-5xl md:text-7xl font-serif mb-10 leading-tight">An atelier, not a store.</h2>
+                <p data-aos="fade-up" class="text-gray-400 text-lg md:text-xl leading-relaxed mb-16 font-light">
+                    Every piece is drafted specifically for your space. We work with discerning homeowners who demand perfection.
+                </p>
 
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                <div class="gallery-card overflow-hidden" data-aos="fade-up" data-aos-delay="100">
-                    <img src="1000457597.png" class="w-full h-64 object-cover" alt="Joinery Detail">
-                </div>
-                <div class="gallery-card overflow-hidden" data-aos="fade-up" data-aos-delay="200">
-                    <img src="1000457598.png" class="w-full h-64 object-cover" alt="Workshop Process">
-                </div>
-                <div class="gallery-card overflow-hidden" data-aos="fade-up" data-aos-delay="300">
-                    <img src="1000457599.png" class="w-full h-64 object-cover" alt="Timber Selection">
-                </div>
-                <div class="gallery-card overflow-hidden" data-aos="fade-up" data-aos-delay="100">
-                    <img src="1000457600.png" class="w-full h-64 object-cover" alt="Craftsmanship">
-                </div>
-                <div class="gallery-card overflow-hidden" data-aos="fade-up" data-aos-delay="200">
-                    <img src="1000457601.png" class="w-full h-64 object-cover" alt="Finishing Touches">
-                </div>
-                <div class="gallery-card overflow-hidden" data-aos="fade-up" data-aos-delay="300">
-                    <img src="1000457602.png" class="w-full h-64 object-cover" alt="Final Assembly">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div class="border-l border-gold/30 pl-6" data-aos="fade-right">
+                        <h4 class="font-medium mb-1 accent-gold uppercase text-xs tracking-widest">The Draft</h4>
+                        <p class="text-gray-400 text-sm font-light mt-2">Precise 3D visualization before we touch the timber.</p>
+                    </div>
+                    <div class="border-l border-gold/30 pl-6" data-aos="fade-right" data-aos-delay="200">
+                        <h4 class="font-medium mb-1 accent-gold uppercase text-xs tracking-widest">The Finish</h4>
+                        <p class="text-gray-400 text-sm font-light mt-2">Hand-inspected joints and surfaces for a lifetime of use.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -178,7 +146,7 @@
     <script>
         AOS.init({
             once: true,
-            duration: 800,
+            duration: 1000,
             offset: 100
         });
     </script>
