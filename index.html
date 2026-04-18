@@ -19,6 +19,10 @@
             background-size: cover;
             background-position: center;
         }
+
+        /* Gallery Hover Effect */
+        .gallery-card img { transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1); }
+        .gallery-card:hover img { transform: scale(1.05); }
     </style>
 </head>
 <body>
@@ -131,7 +135,7 @@
                 </div>
             </div>
 
-            <div class="border-l border-gold/30 pl-8 space-y-12">
+            <div class="border-l border-gold/30 pl-8 space-y-12 mb-24">
                 <div data-aos="fade-left">
                     <span class="text-[10px] accent-gold letter-spacing-custom block mb-4 uppercase">The Process</span>
                     <h3 class="text-2xl font-serif mb-4 italic">Drafted with precision.</h3>
@@ -140,6 +144,27 @@
                 <div data-aos="fade-left">
                     <h3 class="text-2xl font-serif mb-4 italic">Crafted with soul.</h3>
                     <p class="text-gray-400 font-light leading-relaxed">Technology meets tradition. While we use advanced machinery for precision, every joint is hand-inspected and every surface hand-finished by master craftsmen.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="gallery-card overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <img src="1000457597.png" class="w-full h-64 object-cover" alt="Joinery Detail">
+                </div>
+                <div class="gallery-card overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <img src="1000457598.png" class="w-full h-64 object-cover" alt="Workshop Process">
+                </div>
+                <div class="gallery-card overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                    <img src="1000457599.png" class="w-full h-64 object-cover" alt="Timber Selection">
+                </div>
+                <div class="gallery-card overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <img src="1000457600.png" class="w-full h-64 object-cover" alt="Craftsmanship">
+                </div>
+                <div class="gallery-card overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <img src="1000457601.png" class="w-full h-64 object-cover" alt="Finishing Touches">
+                </div>
+                <div class="gallery-card overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                    <img src="1000457602.png" class="w-full h-64 object-cover" alt="Final Assembly">
                 </div>
             </div>
         </div>
@@ -152,9 +177,9 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
-            once: true, // Animation sirf ek baar hogi jab scroll karenge
-            duration: 800, // Animation ki speed
-            offset: 100 // Kitni der pehle animation shuru ho
+            once: true,
+            duration: 800,
+            offset: 100
         });
     </script>
 </body>
