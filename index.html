@@ -3,56 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MZ Wood Works | Bespoke Furniture Atelier</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
-        .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                        url('hadder1.jpg'); /* Aapki file ka naam */
+        body { background-color: #0a0a0a; color: #ffffff; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .accent-gold { color: #c2a47e; }
+        .bg-gold { background-color: #c2a47e; }
+        .letter-spacing-custom { letter-spacing: 0.4em; }
+        
+        /* Hero Section Background */
+        .hero-bg {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(10,10,10,1)), url('hadder1.jpg');
             background-size: cover;
             background-position: center;
-            height: 100vh;
         }
-        .font-playfair { font-family: 'Playfair Display', serif; }
-        .font-inter { font-family: 'Inter', sans-serif; }
-        .letter-spacing-wide { letter-spacing: 0.3em; }
+        
+        .card-bg { background-color: #141414; }
     </style>
 </head>
-<body class="bg-black text-white font-inter">
+<body>
 
-    <header class="hero-section flex flex-col">
-        <nav class="flex justify-between items-center p-6 md:px-12">
-            <div class="text-xl md:text-2xl font-semibold tracking-wider font-playfair">MZ WOOD WORKS</div>
-            <div class="space-y-1.5 cursor-pointer">
-                <div class="w-6 h-0.5 bg-white"></div>
-                <div class="w-6 h-0.5 bg-white"></div>
-            </div>
-        </nav>
+    <nav class="flex justify-between items-center p-6 fixed w-full z-50 bg-gradient-to-b from-black/70 to-transparent">
+        <div class="text-xl font-medium tracking-widest font-serif">MZ WOOD WORKS</div>
+        <div class="space-y-1.5 cursor-pointer">
+            <div class="w-7 h-0.5 bg-white"></div>
+            <div class="w-7 h-0.5 bg-white"></div>
+        </div>
+    </nav>
 
-        <div class="flex-grow flex flex-col justify-center items-center text-center px-6">
-            <span class="text-[10px] md:text-xs uppercase letter-spacing-wide text-amber-200/70 mb-6 font-medium">
-                MASTER CRAFTSMANSHIP
-            </span>
-            
-            <h1 class="text-5xl md:text-7xl font-playfair leading-tight mb-8 max-w-4xl">
-                Furniture that outlasts trends.
-            </h1>
-            
-            <p class="text-gray-300 text-sm md:text-lg max-w-xl leading-relaxed mb-12 font-light">
-                Hand-built bespoke kitchens, wardrobes, and media walls. 
-                Designed with precision, crafted with soul.
-            </p>
-
-            <div class="flex flex-col gap-4 w-full max-w-xs">
-                <button class="bg-[#c2a47e] hover:bg-[#b3936a] text-black font-semibold py-4 px-8 uppercase text-xs tracking-widest transition-all">
-                    Book a Consultation
-                </button>
-                <button class="border border-white/30 hover:bg-white/10 text-white py-4 px-8 uppercase text-xs tracking-widest transition-all">
-                    View Our Work
-                </button>
-            </div>
+    <header class="hero-bg h-screen flex flex-col justify-center items-center text-center px-6">
+        <span class="text-[10px] uppercase letter-spacing-custom accent-gold mb-8 font-medium">MASTER CRAFTSMANSHIP</span>
+        <h1 class="text-5xl md:text-8xl font-serif leading-tight mb-8">Furniture that<br>outlasts trends.</h1>
+        <p class="text-gray-300 text-sm md:text-lg max-w-xl leading-relaxed mb-12 font-light">
+            Hand-built bespoke kitchens, wardrobes, and media walls. Designed with precision, crafted with soul.
+        </p>
+        <div class="flex flex-col gap-4 w-full max-w-xs">
+            <button class="bg-gold text-black font-medium py-4 uppercase text-[11px] tracking-[0.2em] transition-all hover:brightness-110">
+                Book a Consultation
+            </button>
+            <button class="border border-white/20 text-white py-4 uppercase text-[11px] tracking-[0.2em] transition-all hover:bg-white/5">
+                View Our Work
+            </button>
         </div>
     </header>
+
+    <section class="py-24 px-6 max-w-5xl mx-auto">
+        <div class="text-center mb-20">
+            <h2 class="text-4xl md:text-6xl font-serif mb-6">Our Expertise</h2>
+            <div class="w-20 h-px bg-gold mx-auto"></div>
+        </div>
+
+        <div class="mb-20">
+            <img src="kitchen.jpg" alt="Bespoke Kitchen" class="w-full h-[500px] object-cover mb-10">
+            <div class="bg-card p-2">
+                <h3 class="text-3xl font-serif mb-4">Bespoke Kitchens</h3>
+                <p class="text-gray-400 leading-relaxed mb-6 font-light">
+                    The heart of the home, crafted without compromise. From timeless shakers to minimalist modern spaces.
+                </p>
+                <a href="#" class="accent-gold uppercase text-xs tracking-widest flex items-center gap-2 font-medium">
+                    Explore <span class="text-lg">→</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="mb-20">
+            <img src="wardrobe.jpg" alt="Luxury Wardrobes" class="w-full h-[500px] object-cover mb-10">
+            <div>
+                <h3 class="text-3xl font-serif mb-4">Luxury Wardrobes</h3>
+                <p class="text-gray-400 leading-relaxed mb-6 font-light">
+                    Walk-in and sliding systems designed around your life. Impeccable finishes, integrated lighting.
+                </p>
+                <a href="#" class="accent-gold uppercase text-xs tracking-widest flex items-center gap-2 font-medium">
+                    Explore <span class="text-lg">→</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="mb-20">
+            <img src="media-wall.jpg" alt="Media Walls" class="w-full h-[500px] object-cover mb-10">
+            <div>
+                <h3 class="text-3xl font-serif mb-4">Media Walls</h3>
+                <p class="text-gray-400 leading-relaxed mb-6 font-light">
+                    Architectural focal points that hide the clutter and elevate the space. Custom acoustics and storage.
+                </p>
+                <a href="#" class="accent-gold uppercase text-xs tracking-widest flex items-center gap-2 font-medium">
+                    Explore <span class="text-lg">→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-8 bg-[#050505]">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-5xl md:text-7xl font-serif mb-10 leading-tight">Not a furniture store.<br>An atelier.</h2>
+            <p class="text-gray-400 text-lg md:text-xl leading-relaxed mb-16 font-light">
+                We don't pull boxes from a warehouse. Every piece is drafted, modeled, cut, and finished specifically for your space. We work with discerning homeowners and interior designers who demand perfection.
+            </p>
+
+            <div class="space-y-8">
+                <div class="flex items-start gap-4">
+                    <span class="accent-gold text-2xl">✓</span>
+                    <p class="text-gray-200">3D architectural renders before any cut is made</p>
+                </div>
+                <div class="flex items-start gap-4">
+                    <span class="accent-gold text-2xl">✓</span>
+                    <p class="text-gray-200">Premium sustainable timbers and veneers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="p-12 text-center border-t border-white/5">
+        <p class="text-[10px] tracking-[0.3em] text-gray-600 uppercase">&copy; 2026 MZ WOOD WORKS</p>
+    </footer>
 
 </body>
 </html>
