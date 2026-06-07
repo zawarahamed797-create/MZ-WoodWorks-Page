@@ -171,27 +171,21 @@
 
   .divider{height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0.3;margin:0 5%;}
 
-  /* ===================== ANIMATIONS ===================== */
+  /* Responsive Adjustments */
+  @media(max-width:968px){
+    .hero-content, .terms-grid, .contact-grid {grid-template-columns:1fr;gap:40px;}
+    .nav-links, .nav-right .nav-cta {display:none;}
+    .hamburger {display:flex;}
+  }
+  @media(max-width:600px){
+    .agreement-grid, .cf-grid {grid-template-columns:1fr;}
+    .invoice-item-row {grid-template-columns:1fr; gap:6px;}
+    .invoice-item-row button {width:100%; margin-top:5px;}
+  }
 
-  /* Scroll reveal - base state */
-  .reveal{opacity:0;transform:translateY(40px);transition:opacity 0.7s ease,transform 0.7s ease;}
-  .reveal.visible{opacity:1;transform:translateY(0);}
-  .reveal-left{opacity:0;transform:translateX(-50px);transition:opacity 0.7s ease,transform 0.7s ease;}
-  .reveal-left.visible{opacity:1;transform:translateX(0);}
-  .reveal-right{opacity:0;transform:translateX(50px);transition:opacity 0.7s ease,transform 0.7s ease;}
-  .reveal-right.visible{opacity:1;transform:translateX(0);}
-  .reveal-scale{opacity:0;transform:scale(0.85);transition:opacity 0.6s ease,transform 0.6s ease;}
-  .reveal-scale.visible{opacity:1;transform:scale(1);}
+  /* Animations Classes */
+  .reveal, .reveal-left, .reveal-right, .reveal-scale {opacity:1 !important; transform:none !important;} /* Ensures content is visible immediately without scroll script dependencies */
 
-  /* Stagger delays */
-  .delay-1{transition-delay:0.1s!important;}
-  .delay-2{transition-delay:0.2s!important;}
-  .delay-3{transition-delay:0.3s!important;}
-  .delay-4{transition-delay:0.4s!important;}
-  .delay-5{transition-delay:0.5s!important;}
-  .delay-6{transition-delay:0.6s!important;}
-
-  /* Hero entrance */
   .fade-in{opacity:0;transform:translateY(25px);animation:fadeIn 0.8s ease forwards;}
   @keyframes fadeIn{to{opacity:1;transform:translateY(0);}}
   .fade-in:nth-child(1){animation-delay:0.15s;}
@@ -201,7 +195,6 @@
   .fade-in:nth-child(5){animation-delay:0.75s;}
   .fade-in:nth-child(6){animation-delay:0.9s;}
 
-  /* Floating orbs in hero */
   .orb{position:absolute;border-radius:50%;pointer-events:none;z-index:1;}
   .orb-1{width:300px;height:300px;background:radial-gradient(circle,rgba(201,148,58,0.08),transparent 70%);top:10%;right:5%;animation:floatOrb1 8s ease-in-out infinite;}
   .orb-2{width:200px;height:200px;background:radial-gradient(circle,rgba(92,51,23,0.15),transparent 70%);bottom:20%;left:10%;animation:floatOrb2 6s ease-in-out infinite;}
@@ -210,8 +203,23 @@
   @keyframes floatOrb2{0%,100%{transform:translate(0,0);}50%{transform:translate(15px,-20px);}}
   @keyframes floatOrb3{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(-10px,15px) scale(1.1);}}
 
-  /* Spinning logo icon */
   .nav-logo-icon{animation:logoFloat 4s ease-in-out infinite;}
   @keyframes logoFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-3px);}}
+</style>
+</head>
+<body>
 
-  /* Navbar link u
+  <nav>
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-icon">🪚</div>
+      <div class="nav-logo-text">
+        <span>MZ Wood Works</span>
+        <span>Premium Carpentry</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#terms">Terms</a></li>
+      <li><a href="#agreement">Agreement</a></li>
+      <li><a href="#invoice">Invoice Generator</a></li>
+      <li><
